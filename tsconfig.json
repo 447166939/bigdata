@@ -6,7 +6,8 @@
       "@/assets/*": ["src/assets/*"],
       "@/store/*": ["src/store/*"],
       "@/utils/*": ["src/utils/*"],
-      "@/theme/*": ["src/theme/*"]
+      "@/theme/*": ["src/theme/*"],
+      "@/hooks/*": ["src/hooks/*"]
     },
     "noImplicitAny": true,
     "noImplicitThis": true,

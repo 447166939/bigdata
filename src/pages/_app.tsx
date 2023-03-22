@@ -1,13 +1,14 @@
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
-import React, { useEffect } from "react";
+import React from "react";
 import Head from "next/head";
 import { AppProps, NextWebVitalsMetric } from "next/app";
 import { Provider } from "react-redux";
 import { wrapper } from "../store";
 import theme from "@/theme/index";
 import createEmotionCache from "@/utils/createEmotionCache";
+import './global.css';
 
 const clientSideEmotionCache = createEmotionCache();
 

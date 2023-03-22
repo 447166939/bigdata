@@ -1,9 +1,9 @@
-import {applyMiddleware, createStore, combineReducers} from "redux";
+import { applyMiddleware, createStore, combineReducers } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { all } from "redux-saga/effects";
 import globalSaga from "./modules/global/saga";
 import { globalReducer, namespace as globalNamespace } from "./modules/global/reducer";
-import { createWrapper,Context } from "next-redux-wrapper";
+import { createWrapper, Context } from "next-redux-wrapper";
 export function* rootSaga() {
   yield all([...globalSaga]);
 }
@@ -18,9 +18,9 @@ const bindMiddleware = (middleware: any) => {
   }
   return applyMiddleware(...middleware);
 };
-export const makeStore:any = (context: Context) => {
+export const makeStore: any = (context: Context) => {
   const sagaMiddleware = createSagaMiddleware();
-  const store = createStore(rootReducer,undefined, bindMiddleware([sagaMiddleware]));
+  const store = createStore(rootReducer, undefined, bindMiddleware([sagaMiddleware]));
   sagaMiddleware.run(rootSaga);
   return store;
 };

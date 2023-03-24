@@ -49,5 +49,5 @@ export const AskButton = styled(Button)`
   background-image: linear-gradient(#00c6ff, #0078ff);
   width: 153px;
 `;
-const Test=styled('div')``
-export default Test
+const Test = styled("div")``;
+export default Test;

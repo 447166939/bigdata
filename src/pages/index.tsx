@@ -23,6 +23,21 @@ import smallLogo from "@/assets/small_logo.png";
 import searchIcon from "@/assets/Search.png";
 import fireIcon from "@/assets/fire.png";
 import downIcon from "@/assets/down.png";
+import footerLeftCircle from '@/assets/footer_left_circle.png'
+import footerRightCircle from '@/assets/footer_right_circle.png'
+import phoneIcon from '@/assets/phone.png';
+import emailIcon from '@/assets/email.png';
+import eyeIcon from '@/assets/eye.png';
+import weixinIcon from '@/assets/weixin.png';
+import douyinIcon from '@/assets/douyin.png';
+import clutch from '@/assets/clutch.png';
+import uiclutch from '@/assets/uiclutch.png';
+import redPerson from '@/assets/red_person .png'
+import maIcon from '@/assets/MA.png';
+import lineChart from '@/assets/line_chart.svg';
+import productPic from '@/assets/product_picture.png'
+import metricPic from '@/assets/metric.png';
+import monitorPic from '@/assets/monitor.png';
 export interface IHomeProps {}
 const index: React.FC<IHomeProps> = (props) => {
   const [isSearch, setIsSearch] = useState(false);
@@ -202,6 +217,92 @@ const index: React.FC<IHomeProps> = (props) => {
               <div className="home-ask-metric-computer"></div>
             </div>
           )}
+        </div>
+      </div>
+
+      <div className='home-bottom-box'>
+        <div className={'home-chart-container'}>
+          <div className={'home-chart-top-box'}>
+            <div className={'home-chart-top-icon-wrapper'}>
+              <Image className={"home-chart-top-icon"} src={redPerson} alt={""} />
+            </div>
+            <div className={'home-chart-top-text'}>Can you give me the BSR keyword under category "computer monitor" at Amazon? I need Top5 BSR keyword for past 6 months' data, draw me a graph of "Line Charts", y-axis=Monthly Sales, x-axis=time</div>
+          </div>
+          <div className={'home-chart-bottom-box'}>
+            <div className={'home-chart-bottom-icon-wrapper'}><Image className={"home-chart-bottom-icon"} src={maIcon} alt={""} /></div>
+            <div className={'home-chart-bottom-right'}>
+              <div className={'home-chart-bottom-text'}>TOP-5 BSR keyword under category "computer monitor" at Amazon is:
+                1.computer monitor
+                2.computer screen
+                3.monitor
+                4.screen
+                5.computer display
+                With a monthly GMV of $38.47M and $299.95 on average price. Top sellers are Samsung, Acer, ASUS, KOORUI and dell. Growth in this market is slow with about 0.5% up in GMV month to month. Trending here is bigger and thinner screen, wide-bend screen has a month GMV growth of 6.2%. I'm able to find 289 keywords and misspelling-keywords and here are the Top5 keywords with its "Monthly Sales" and time manner data in Line Charter:</div>
+              <div className={'home-chart-bottom-key'}>Keyword Trending</div>
+              <Image className={"home-chart-img"} src={lineChart} alt={""} />
+            </div>
+          </div>
+        </div>
+        <div className={'home-report-title'}>
+          Explore our omnichannel digital commerce report features
+        </div>
+        <div className={'home-product-box'}>
+          <div className={'home-product-left'}>
+            <div className={'home-product-title'}>Product Insights</div>
+            <div className={'home-product-text'}>Reveal product metrics and get deep insights across e-commerce platforms including marketplace, DTC and social media. Generate the most effective tactics and discover the future of your market.</div>
+          </div>
+          <Image className={"home-product-pic"} src={productPic} alt={""} />
+        </div>
+        <div className={'home-metric-box'}>
+          <Image className={"home-metric-pic"} src={metricPic} alt={""} />
+          <div className={'home-metric-right'}>
+<div className={'home-metric-title'}>Ask Metric</div>
+            <div className={'home-metric-text'}>
+              Based on AI technology, AskMetric provides answers and assist with a wide range of tasks, including but not limited to metrics visualisation, keyword searching and recommendations to product, platform and ads strategies.
+            </div>
+          </div>
+        </div>
+        <div className={'home-monitor-box'}>
+          <div className={'home-monitor-left'}>
+            <div className={'home-monitor-title'}>Monitor 360</div>
+            <div className={'home-monitor-text'}>Real-time track core metrics of products you followed. Reveal your competitors' strategies and changes. Enabled to move fast and perform competitive actions.</div>
+          </div>
+          <Image className={"home-monitor-pic"} src={monitorPic} alt={""} />
+
+        </div>
+      </div>
+      <div className={'home-footer'}>
+        <div className={'home-footer-glass'}></div>
+        <Image className={"home-footer-left-circle"} src={footerLeftCircle} alt={""} />
+        <Image className={"home-footer-right-circle"} src={footerRightCircle} alt={""} />
+        <div className={'home-footer-left-box'}>
+          <div className={'home-footer-top-row'}>
+            {/*<Image className={"home-footer-logo"} src={footerLogo} alt={""} />*/}
+            <div className={'home-footer-logo'}></div>
+            <div className={'home-footer-text1'}>AskMetric</div>
+            <div className={'home-footer-text2'}>About us</div>
+            <div className={'home-footer-text3'}>Latest news</div>
+            <div className={'home-footer-text4'}>Recruit elites</div>
+            <div className={'home-footer-text5'}>Enterprise cooperation</div>
+          </div>
+          <div className={'home-footer-bottom-row'}>
+            <div>
+              <div className={'home-footer-phone-text'}>400-100-8888</div>
+              <div className={'home-footer-time-text'}>working hours：8:00-18:00</div>
+            </div>
+            <div className={'home-footer-icons'}>
+              <div className={'home-footer-icon-wrapper'}><Image className={"home-footer-phone-icon"} src={phoneIcon} alt={""} /></div>
+              <div className={'home-footer-icon-wrapper'}> <Image className={"home-footer-email-icon"} src={emailIcon} alt={""} /></div>
+              <div className={'home-footer-icon-wrapper'}><Image className={"home-footer-eye-icon"} src={eyeIcon} alt={""} /></div>
+              <div className={'home-footer-icon-wrapper'}><Image className={"home-footer-weixin-icon"} src={weixinIcon} alt={""} /></div>
+              <div className={'home-footer-icon-wrapper'}><Image className={"home-footer-douyin-icon"} src={douyinIcon} alt={""} /></div>
+
+            </div>
+          </div>
+        </div>
+        <div className={'home-footer-right-box'}>
+          <Image className={"home-footer-clutch-icon"} src={clutch} alt={""} />
+          <Image className={"home-footer-uiclutch-icon"} src={uiclutch} alt={""} />
         </div>
       </div>
       <Modal

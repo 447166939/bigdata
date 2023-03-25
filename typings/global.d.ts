@@ -1,7 +1,7 @@
 declare global {
   declare module "*.svg";
   declare module "*.png";
-  declare module "*.css"
+  declare module "*.css";
 }
 import { PaletteType } from "@material-ui/core";
 declare module "@material-ui/core/styles/createMuiTheme" {

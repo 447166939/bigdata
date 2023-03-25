@@ -1,6 +1,6 @@
 import InputBase from "@mui/material/InputBase";
 import Button from "@mui/material/Button";
-import { styled } from "@mui/material/styles";
+import styled from "@emotion/styled";
 export const CustomContainer = styled("div")`
   position: relative;
   background-color: #fff;
@@ -40,14 +40,23 @@ export const SubscribeButton = styled(Button)`
   height: 44px;
   color: #fff;
 `;
-export const MyButton = styled(Button)`
-  border-color: #d0d3d9 !important;
-  color: #5d6679;
-  width: 153px;
+export const OkButton=styled(Button)`
+width: 153px;
+  height: 44px;
+  color: #fff;
+`
+export const MyButton = styled<any>(Button)`
+background-image: ${props =>props.isActive ? 'linear-gradient(#00c6ff, #0078ff)' : 'none'  };
+  border-color:${props=>props.isActive ? '#d0d3d9 !important' :'none!important' }
+  color:${props=>props.isActive ? '#5d6679':''}
+  width: 153px!important;
 `;
-export const AskButton = styled(Button)`
-  background-image: linear-gradient(#00c6ff, #0078ff);
-  width: 153px;
+
+export const AskButton = styled<any>(Button)`
+  background-image: ${props =>props.isActive ? 'linear-gradient(#00c6ff, #0078ff)' : 'none'  };
+   border-color:${props=>props.isActive ? '#d0d3d9 !important' :'none!important' }
+  color:${props=>props.isActive ? '#5d6679':''}
+  width: 153px!important;
 `;
 const Test = styled("div")``;
 export default Test;

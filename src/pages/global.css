@@ -94,6 +94,13 @@ body,
   height: auto;
   margin-left: 23px;
 }
+.home-input-search-button{
+  background-image:  linear-gradient(#00c6ff, #0078ff);
+  border-radius: 58px;
+  height: 100%;
+  width: 108px;
+  color: #fff;
+}
 .home-button-wrapper {
   display: flex;
   justify-content: center;
@@ -101,8 +108,10 @@ body,
   margin-bottom: 378px;
 }
 .home-ask-metric {
-  width: 480px;
-  min-height: 272px;
+  display: flex;
+  align-items: center;
+  width: 714px;
+  min-height: 427px;
   background-size: 100% auto;
   z-index: 100;
   background-repeat: no-repeat;
@@ -113,38 +122,41 @@ body,
   transform: translateX(-50%);
 }
 .home-ask-metric-left {
-  width: 234px;
-  margin-top: 12%;
+  width: 377px;
 }
 .home-ask-metric-computer {
-  width: 164px;
-  height: 164px;
+  width: 250px;
+  height: 250px;
   background-image: url("../assets/ask_metric.png");
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
-  right: 22px;
+  right: 32px;
   top: 50%;
   transform: translateY(-50%);
 }
 .home-ask-metric-title {
   font-weight: 600;
-  font-size: 18px;
-  margin-left: 48px;
+  font-size: 30px;
+  margin-left: 50px;
+  line-height: 24px;
 }
 .home-ask-metric-text-black {
   margin-top: 8px;
-  font-size: 12px;
+  font-size: 20px;
   font-weight: 400;
-  margin-left: 48px;
+  margin-left: 50px;
   color: #555d72;
+  line-height: 30px;
+
 }
 .home-ask-metric-text {
   margin-top: 8px;
-  font-size: 12px;
+  font-size: 20px;
   font-weight: 400;
-  margin-left: 48px;
+  margin-left: 50px;
   color: #b9bdc7;
+  line-height: 30px;
 }
 .home-ask-button {
   position: relative;
@@ -154,10 +166,27 @@ body,
 }
 .home-search-button {
   position: relative;
+  width: 153px;
+  height: 44px;
+}
+.home-active-button{
+  background-image: linear-gradient(#00c6ff, #0078ff);
+  width: 153px!important;
+  border: none!important;
+  color: #fff!important;
+  height: 44px!important;
+}
+.home-inactive-button{
+  border-color: #d0d3d9!important;
+  color: #5d6679!important;
+  width: 153px!important;
+  height: 44px!important;
 }
 .home-search {
-  width: 480px;
-  min-height: 272px;
+  display: flex;
+  align-items: center;
+  width: 714px;
+  min-height: 427px;
   background-size: 100% auto;
   z-index: 100;
   background-repeat: no-repeat;
@@ -168,36 +197,38 @@ body,
   transform: translateX(-50%);
 }
 .home-search-left {
-  width: 245px;
-  margin-top: 10%;
+  width: 347px;
 }
 .home-search-title {
   font-weight: 600;
-  font-size: 18px;
-  margin-left: 48px;
+  font-size: 30px;
+  margin-left: 73px;
+  line-height: 24px;
 }
 .home-search-text-black {
   margin-top: 7px;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 400;
-  margin-left: 48px;
+  margin-left: 73px;
   color: #555d72;
+  line-height: 30px;
 }
 .home-search-text {
   margin-top: 7px;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 400;
-  margin-left: 48px;
+  margin-left: 73px;
   color: #b9bdc7;
+  line-height: 30px;
 }
 .home-search-chart {
-  width: 182px;
-  height: 180px;
+  width: 253px;
+  height: 250px;
   background-image: url("../assets/chart.png");
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
-  right: 16px;
+  right: 31px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -294,12 +325,13 @@ body,
   margin-left: auto;
 }
 .home-bottom-box {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  height: 2202px;
   background-color: #fff;
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
-  z-index: 200;
+  z-index: 90;
   box-shadow: 0 8px 59px rgba(50, 50, 71, 0.06), 0 -10px 95px rgba(38, 106, 136, 0.06);
 }
 .home-footer {
@@ -307,7 +339,7 @@ body,
   position: relative;
   display: flex;
   align-items: center;
-  z-index: 250;
+  z-index: 90;
 }
 .home-footer-left-circle {
   width: 440px;
@@ -523,16 +555,25 @@ body,
   font-size: 16px;
   color: rgba(75, 82, 90, 1);
   height: 227px;
+  white-space: pre-wrap;
 }
-.blink-cursor:after{
-  content: "|";
+.blink-cursor{
+  position: relative;
+}
+.blink-cursor:after {
+  content: "";
   animation: blink 1s step-end infinite;
+  width: 1px;
+  height: 20px;
+  background-color: #000;
+  position: absolute;
 }
 @keyframes blink {
-  from,to{
+  from,
+  to {
     opacity: 1;
   }
-  50%{
+  50% {
     opacity: 0;
   }
 }
@@ -544,8 +585,13 @@ body,
 }
 .home-chart-img {
   width: 1000px;
- height: 257px;
+  height: 257px;
   margin-top: 23px;
+}
+.home-commerce-box{
+  background-color: rgba(244, 246, 246, 1);
+  flex: 1;
+  margin-top: -33px;
 }
 .home-report-title {
   width: 699px;
@@ -553,84 +599,89 @@ body,
   font-size: 40px;
   color: rgba(19, 19, 19, 1);
   z-index: 200;
-  margin: 8px auto 0 auto;
+  margin: 100px auto 0 auto;
 }
 .home-product-box {
-  width: 1200px;
   border-radius: 20px;
   background-color: rgba(244, 246, 246, 1);
-  padding: 29px 117px 29px 102px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin: 169px auto 0 auto;
+  justify-content: flex-end;
+  margin: 83px 0 0 0;
 }
 .home-product-title {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 30px;
   color: rgba(0, 0, 0, 1);
 }
 .home-product-text {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
   color: rgba(134, 144, 156, 1);
   width: 417px;
 }
 .home-product-pic {
-  width: 338px;
+  width: 677px;
   height: auto;
+  margin-left: 155px;
+  margin-right: 208px;
 }
 .home-metric-box {
   width: 1200px;
   background-color: rgba(244, 246, 246, 1);
   border-radius: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin: 24px auto 0 auto;
-  padding: 28px 119px 28px 102px;
+  margin: 93px auto 0 auto;
 }
 .home-metric-pic {
-  width: 321px;
+  width: 675px;
   height: auto;
 }
 .home-metric-right {
   width: 451px;
+  margin-left: 69px;
 }
 .home-metric-title {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 30px;
   color: rgba(0, 0, 0, 1);
 }
 .home-metric-text {
   color: rgba(134, 144, 156, 1);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
+  width: 100%;
 }
 .home-monitor-box {
-  width: 1200px;
   background-color: rgba(244, 246, 246, 1);
   border-radius: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin: 24px auto 0 auto;
-  padding: 28px 119px 28px 102px;
+  margin: 72px auto 67px auto;
 }
 .home-monitor-pic {
-  width: 331px;
+  width: 671px;
   height: auto;
 }
 .home-monitor-left {
   width: 451px;
+  margin-left: 103px;
 }
 .home-monitor-title {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 30px;
   color: rgba(0, 0, 0, 1);
 }
 .home-monitor-text {
   color: rgba(134, 144, 156, 1);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
 }
+.home-ok-button{
+width: 153px;
+  height: auto;
+}
+

@@ -293,148 +293,147 @@ body,
   height: auto;
   margin-left: auto;
 }
-.home-bottom-box{
+.home-bottom-box {
   position: relative;
   height: 2202px;
   background-color: #fff;
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
   z-index: 200;
-  box-shadow: 0 8px 59px rgba(50, 50, 71, 0.06),0 -10px 95px rgba(38, 106, 136, 0.06);
+  box-shadow: 0 8px 59px rgba(50, 50, 71, 0.06), 0 -10px 95px rgba(38, 106, 136, 0.06);
 }
-.home-footer{
+.home-footer {
   height: 438px;
   position: relative;
   display: flex;
   align-items: center;
   z-index: 250;
 }
-.home-footer-left-circle{
+.home-footer-left-circle {
   width: 440px;
   height: auto;
   position: absolute;
   left: 29px;
   top: 0;
 }
-.home-footer-right-circle{
+.home-footer-right-circle {
   width: 365px;
   height: auto;
   position: absolute;
   bottom: 0;
   right: 0;
 }
-.home-footer-glass{
+.home-footer-glass {
   position: absolute;
   width: 100%;
   height: 100%;
   backdrop-filter: blur(200px);
   background-color: #000;
 }
-.home-footer-left-box{
-z-index: 100;
+.home-footer-left-box {
+  z-index: 100;
 }
-.home-footer-right-box{
-z-index: 100;
+.home-footer-right-box {
+  z-index: 100;
   display: flex;
   flex-direction: column;
   margin-left: 60px;
 }
-.home-footer-logo{
-width: 31px;
+.home-footer-logo {
+  width: 31px;
   height: 31px;
   background-image: url("../assets/footer_logo.png");
   background-size: 250% auto;
   background-repeat: no-repeat;
   background-position: center;
 }
-.home-footer-top-row{
+.home-footer-top-row {
   display: flex;
   align-items: center;
   margin-left: 351px;
 }
-.home-footer-bottom-row{
+.home-footer-bottom-row {
   display: flex;
   align-items: center;
   margin-left: 351px;
   margin-top: 76px;
 }
-.home-footer-text1{
+.home-footer-text1 {
   margin-left: 12px;
   color: #fff;
   font-size: 22px;
   font-weight: 500;
 }
-.home-footer-text2{
+.home-footer-text2 {
   font-weight: 400;
   font-size: 18px;
   color: #fff;
   margin-left: 79px;
 }
-.home-footer-text3{
+.home-footer-text3 {
   font-weight: 400;
   font-size: 18px;
   color: #fff;
   margin-left: 67px;
-
 }
-.home-footer-text4{
+.home-footer-text4 {
   font-weight: 400;
   font-size: 18px;
   color: #fff;
   margin-left: 41px;
 }
-.home-footer-text5{
+.home-footer-text5 {
   font-weight: 400;
   font-size: 18px;
   color: #fff;
   margin-left: 31px;
 }
-.home-footer-phone-text{
+.home-footer-phone-text {
   font-weight: 400;
   font-size: 26px;
   color: #fff;
 }
-.home-footer-time-text{
-color: rgba(255, 255, 255, 0.5);
+.home-footer-time-text {
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 400;
   font-size: 18px;
 }
-.home-footer-icons{
+.home-footer-icons {
   display: flex;
   align-items: center;
   margin-left: 97px;
 }
-.home-footer-phone-icon{
-width: 28px;
+.home-footer-phone-icon {
+  width: 28px;
   height: auto;
 }
-.home-footer-email-icon{
-width: 32px;
+.home-footer-email-icon {
+  width: 32px;
   height: auto;
 }
-.home-footer-eye-icon{
-width: 26px;
+.home-footer-eye-icon {
+  width: 26px;
   height: auto;
 }
-.home-footer-weixin-icon{
-width: 32px;
+.home-footer-weixin-icon {
+  width: 32px;
   height: auto;
 }
-.home-footer-douyin-icon{
-width: 25px;
+.home-footer-douyin-icon {
+  width: 25px;
   height: auto;
 }
-.home-footer-clutch-icon{
-width: 214px;
-  height: auto;
-  cursor: pointer;
-}
-.home-footer-uiclutch-icon{
-width: 214px;
+.home-footer-clutch-icon {
+  width: 214px;
   height: auto;
   cursor: pointer;
 }
-.home-footer-icon-wrapper{
+.home-footer-uiclutch-icon {
+  width: 214px;
+  height: auto;
+  cursor: pointer;
+}
+.home-footer-icon-wrapper {
   width: 65px;
   height: 65px;
   background-color: #181818;
@@ -445,23 +444,23 @@ width: 214px;
   margin-left: 50px;
   cursor: pointer;
 }
-.home-footer-icon-wrapper:first-child{
+.home-footer-icon-wrapper:first-child {
   margin-left: 0;
 }
-.home-chart-container{
+.home-chart-container {
   position: relative;
   border-radius: 20px;
   background-color: #fff;
   top: -104px;
-  left:0;
-  right:0;
+  left: 0;
+  right: 0;
   margin: 0 auto 0 auto;
   width: 1200px;
   padding-top: 50px;
   padding-bottom: 40px;
-  box-shadow: 0px 8px 16px rgba(50, 50, 71, 0.06),0px -10px 8px rgba(50, 50, 71, 0.08);
+  box-shadow: 0px 8px 16px rgba(50, 50, 71, 0.06), 0px -10px 8px rgba(50, 50, 71, 0.08);
 }
-.home-chart-top-box{
+.home-chart-top-box {
   background-color: rgba(244, 246, 246, 0.7);
   width: 1099px;
   margin: 0 auto 0 auto;
@@ -470,7 +469,7 @@ width: 214px;
   padding-top: 29px;
   padding-bottom: 19px;
 }
-.home-chart-top-icon-wrapper{
+.home-chart-top-icon-wrapper {
   background-color: rgba(241, 104, 134, 1);
   width: 44px;
   height: 44px;
@@ -479,18 +478,19 @@ width: 214px;
   align-items: center;
   margin-left: 20px;
 }
-.home-chart-top-icon{
+.home-chart-top-icon {
   width: 22px;
   height: auto;
 }
-.home-chart-top-text{
+.home-chart-top-text {
   font-weight: 400;
   font-size: 16px;
   color: rgba(75, 82, 90, 1);
   width: 963px;
   margin-left: 23px;
+  height: 59px;
 }
-.home-chart-bottom-box{
+.home-chart-bottom-box {
   width: 1099px;
   background-color: rgba(244, 246, 246, 0.7);
   border-radius: 4px;
@@ -500,7 +500,7 @@ width: 214px;
   padding-top: 28px;
   padding-bottom: 23px;
 }
-.home-chart-bottom-icon-wrapper{
+.home-chart-bottom-icon-wrapper {
   width: 44px;
   height: 44px;
   background-color: rgba(1, 161, 255, 1);
@@ -508,33 +508,46 @@ width: 214px;
   justify-content: center;
   align-items: center;
 }
-.home-chart-bottom-icon{
+.home-chart-bottom-icon {
   width: 35px;
   height: auto;
 }
-.home-chart-bottom-right{
-margin-left: 23px;
+.home-chart-bottom-right {
+  margin-left: 23px;
   display: flex;
   flex-direction: column;
 }
-.home-chart-bottom-text{
+.home-chart-bottom-text {
   width: 963px;
   font-weight: 400;
   font-size: 16px;
   color: rgba(75, 82, 90, 1);
+  height: 227px;
 }
-.home-chart-bottom-key{
+.blink-cursor:after{
+  content: "|";
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  from,to{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+}
+.home-chart-bottom-key {
   font-size: 16px;
   font-weight: 700;
   color: rgba(72, 80, 94, 1);
   margin-top: 22px;
 }
-.home-chart-img{
+.home-chart-img {
   width: 1000px;
-  height: auto;
+ height: 257px;
   margin-top: 23px;
 }
-.home-report-title{
+.home-report-title {
   width: 699px;
   font-weight: 700;
   font-size: 40px;
@@ -542,7 +555,7 @@ margin-left: 23px;
   z-index: 200;
   margin: 8px auto 0 auto;
 }
-.home-product-box{
+.home-product-box {
   width: 1200px;
   border-radius: 20px;
   background-color: rgba(244, 246, 246, 1);
@@ -552,22 +565,22 @@ margin-left: 23px;
   align-items: center;
   margin: 169px auto 0 auto;
 }
-.home-product-title{
+.home-product-title {
   font-weight: 700;
   font-size: 20px;
   color: rgba(0, 0, 0, 1);
 }
-.home-product-text{
+.home-product-text {
   font-weight: 400;
   font-size: 16px;
   color: rgba(134, 144, 156, 1);
   width: 417px;
 }
-.home-product-pic{
+.home-product-pic {
   width: 338px;
   height: auto;
 }
-.home-metric-box{
+.home-metric-box {
   width: 1200px;
   background-color: rgba(244, 246, 246, 1);
   border-radius: 20px;
@@ -577,24 +590,24 @@ margin-left: 23px;
   margin: 24px auto 0 auto;
   padding: 28px 119px 28px 102px;
 }
-.home-metric-pic{
+.home-metric-pic {
   width: 321px;
   height: auto;
 }
-.home-metric-right{
+.home-metric-right {
   width: 451px;
 }
-.home-metric-title{
+.home-metric-title {
   font-weight: 700;
   font-size: 20px;
   color: rgba(0, 0, 0, 1);
 }
-.home-metric-text{
+.home-metric-text {
   color: rgba(134, 144, 156, 1);
   font-weight: 400;
   font-size: 16px;
 }
-.home-monitor-box{
+.home-monitor-box {
   width: 1200px;
   background-color: rgba(244, 246, 246, 1);
   border-radius: 20px;
@@ -604,21 +617,20 @@ margin-left: 23px;
   margin: 24px auto 0 auto;
   padding: 28px 119px 28px 102px;
 }
-.home-monitor-pic{
+.home-monitor-pic {
   width: 331px;
   height: auto;
 }
-.home-monitor-left{
+.home-monitor-left {
   width: 451px;
 }
-.home-monitor-title{
+.home-monitor-title {
   font-weight: 700;
   font-size: 20px;
   color: rgba(0, 0, 0, 1);
 }
-.home-monitor-text{
+.home-monitor-text {
   color: rgba(134, 144, 156, 1);
   font-weight: 400;
   font-size: 16px;
 }
-

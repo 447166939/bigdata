@@ -7,7 +7,7 @@ export const CustomContainer = styled("div")`
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  overflow-x:hidden;
+  overflow-x: hidden;
 `;
 export const GlassEffect = styled("div")`
   position: absolute;
@@ -19,10 +19,19 @@ export const Header = styled("div")`
   display: flex;
   flex-direction: row;
   align-items: center;
+  height:53px;
   z-index: 100;
-  margin-left: 67px;
+   @media (min-width: 375px) {
+        
+      }
+       @media (min-width: 414px) {
+        justify-content:space-around;
+      }
+       @media (min-width: 768px) {
+margin-left: 67px;
   margin-top: 37px;
   margin-right: 41px;
+      }
 `;
 export const CustomInput = styled(InputBase)`
   z-index: 100;

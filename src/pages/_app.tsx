@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 import { wrapper } from "../store";
 import theme from "@/theme/index";
 import createEmotionCache from "@/utils/createEmotionCache";
-import "./global.css";
+import "./global.scss";
 
 const clientSideEmotionCache = createEmotionCache();
 

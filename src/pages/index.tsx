@@ -56,6 +56,9 @@ const index: React.FC<IHomeProps> = (props) => {
   const [tipVisible, setTipVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [success, setSuccess] = useState(false);
+  const [triMode,setTriMode]=useState('start')
+  const [circleMode,setCircleMode]=useState('start')
+  const [rectMode,setRectMode]=useState('start')
   const rootRef = React.useRef(null);
   const sideRef = useRef(null);
   const tipRef = useRef(null);
@@ -73,8 +76,8 @@ const index: React.FC<IHomeProps> = (props) => {
   const svgVisible = mode == "svg" || line1Visible;
   const titleVisible = mode == "title" || svgVisible;
   const maVisible = mode == "ma" || mode == "text2" || titleVisible;
-  const text1Visible=maVisible||mode=='text1'
-  const text2Visible=svgVisible||mode=='text2'
+  const text1Visible = maVisible || mode == "text1";
+  const text2Visible = svgVisible || mode == "text2";
   const personVisible =
     mode == "person" ||
     mode == "text1" ||
@@ -87,6 +90,64 @@ const index: React.FC<IHomeProps> = (props) => {
     mode == "line3" ||
     mode == "line4" ||
     mode == "line5";
+  const triangleVariants = {
+    start: { transform: "translate(-500px,-500px)" },
+    end: (i: number) => {
+      return {
+        transform: "translate(1920px,900px)",
+        transition: {
+         delay:3,
+          duration:20
+        }
+      };
+    },
+    back:()=>{
+      return {
+        transform: "translate(-500px,-500px)",
+        transition: {
+          duration:0
+        }
+      };
+    }
+  };
+  const circleVariants = {
+    start: { transform: "translate(1920px,0px)"},
+    end: (i: number) => {
+      return {
+        transform: "translate(-400px,900px)",
+        transition: {
+          duration:20
+        }
+      };
+    },
+    back:()=>{
+      return {
+        transform: "translate(1920px,0px)",
+        transition: {
+          duration:0
+        }
+      };
+    }
+  };
+  const rectVariants = {
+    start: { transform: "translate(-200px,200px)"},
+    end: (i: number) => {
+      return {
+        transform: "translate(1600px,2000px)",
+        transition: {
+          duration:20
+        }
+      };
+    },
+    back:()=>{
+      return {
+        transform: "translate(-200px,600px)",
+        transition: {
+          duration:0
+        }
+      };
+    }
+  };
   const draw = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: (i: number) => {
@@ -144,6 +205,39 @@ const index: React.FC<IHomeProps> = (props) => {
       };
     }
   };
+  function triComplete(){
+    setTriMode(pre=>{
+      if(pre=='start'){
+        return 'end'
+      }else if(pre=='end') {
+        return 'back'
+      }else {
+        return 'start';
+      }
+    })
+  }
+  function circleComplete(){
+    setCircleMode(pre=>{
+      if(pre=='start'){
+        return 'end'
+      }else if(pre=='end') {
+        return 'back'
+      }else {
+        return 'start';
+      }
+    })
+  }
+  function rectComplete(){
+    setRectMode(pre=>{
+      if(pre=='start'){
+        return 'end'
+      }else if(pre=='end') {
+        return 'back'
+      }else {
+        return 'start';
+      }
+    })
+  }
   function openTip() {
     setTipVisible(true);
   }
@@ -210,7 +304,7 @@ const index: React.FC<IHomeProps> = (props) => {
     });
   }
   function line5Complete(definition: any) {
-    setTimeout(()=>{
+    setTimeout(() => {
       setAnimationState((pre) => {
         if (pre.mode == "line5") {
           console.log("line5", pre);
@@ -224,17 +318,16 @@ const index: React.FC<IHomeProps> = (props) => {
           return pre;
         }
       });
-    },3000)
+    }, 3000);
   }
   function personComplete() {
     setAnimationState((pre) => {
-      if(pre.mode==''){
+      if (pre.mode == "") {
         return {
           ...pre,
-          mode:'person'
-        }
-      }
-      else if (pre.mode == "person") {
+          mode: "person"
+        };
+      } else if (pre.mode == "person") {
         console.log("person", pre);
         return {
           ...pre,
@@ -251,7 +344,7 @@ const index: React.FC<IHomeProps> = (props) => {
   }
   async function submit() {
     if (email == "") return;
-    const ret = await axios.post("https://getlaunchlist.com/s/JZIFPd", qs.stringify({ email }), {
+    const ret = await axios.post("https://getlaunchlist.com/s/IGBWwV", qs.stringify({ email }), {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
       }
@@ -366,10 +459,48 @@ const index: React.FC<IHomeProps> = (props) => {
   };
   return (
     <CustomContainer>
-      <Image className={"home-left-top"} src={leftTop} alt={""} />
+      {/*<Image className={"home-left-top"} src={leftTop} alt={""} />
       <Image className={"home-right-top"} src={rightTop} alt={""} />
-      <Image className={"home-right-bottom"} src={rightBottom} alt={""} />
-      <GlassEffect></GlassEffect>
+      <Image className={"home-right-bottom"} src={rightBottom} alt={""} />*/}
+      <motion.svg onAnimationComplete={triComplete} variants={triangleVariants} animate={triMode} className={'home-triangle'}>
+        <motion.defs>
+          <motion.linearGradient id="paint0" x1="0" y1="0" x2="300" y2="300" gradientUnits="userSpaceOnUse">
+            <motion.stop stopColor="#0078FF"/>
+            <motion.stop offset="1" stop-color="#00C6FF"/>
+          </motion.linearGradient>
+        </motion.defs>
+        <motion.polygon points="150,0 0,200 300,200"
+                        fill="url(#paint0)">
+        </motion.polygon>
+      </motion.svg>
+      <motion.svg onAnimationComplete={circleComplete} variants={circleVariants} animate={circleMode}   className={'home-circle'}>
+        <motion.defs>
+          <motion.linearGradient id="paint1" x1="0" y1="0" x2="300" y2="300" gradientUnits="userSpaceOnUse">
+            <motion.stop stopColor="#5EF529"/>
+            <motion.stop offset="1" stop-color="#4C97EE"/>
+          </motion.linearGradient>
+        </motion.defs>
+        <motion.circle
+            cx={100}
+            cy={100}
+            r={100}
+            fill="url(#paint1)">
+        </motion.circle>
+      </motion.svg>
+      <motion.svg variants={rectVariants} animate={rectMode} onAnimationComplete={rectComplete}    className={'home-rect'}>
+        <motion.defs>
+          <motion.linearGradient id="paint2" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+            <motion.stop stopColor="#F58529"/>
+            <motion.stop offset="1" stop-color="#DD2A7C"/>
+          </motion.linearGradient>
+        </motion.defs>
+        <motion.rect width="200" height="200"
+                     fill={"url(#paint2)"}
+              />
+      </motion.svg>
+      <GlassEffect>
+
+      </GlassEffect>
       <div
         ref={sideRef}
         className={drawerOpen ? "home-side-container" : "home-side-container-hide"}>
@@ -505,7 +636,7 @@ const index: React.FC<IHomeProps> = (props) => {
               <Image className={"home-chart-bottom-icon"} src={smallLogo} alt={""} />
             </motion.div>
             <div className={"home-chart-bottom-right"}>
-              <div className={clsx("home-chart-bottom-text", { "blink-cursor": text2Visible })}>
+              <div className={clsx("home-chart-bottom-text", { "blink-cursor": mode=='text2' })}>
                 {typedText2}
               </div>
               <motion.div
@@ -729,8 +860,8 @@ const index: React.FC<IHomeProps> = (props) => {
       </div>
       <div className={"home-footer"}>
         <div className={"home-footer-glass"}></div>
-        <Image className={"home-footer-left-circle"} src={footerLeftCircle} alt={""} />
-        <Image className={"home-footer-right-circle"} src={footerRightCircle} alt={""} />
+       {/* <Image className={"home-footer-left-circle"} src={footerLeftCircle} alt={""} />
+        <Image className={"home-footer-right-circle"} src={footerRightCircle} alt={""} />*/}
         <div className={"home-footer-left-box"}>
           <div className={"home-footer-top-row"}>
             {/*<Image className={"home-footer-logo"} src={footerLogo} alt={""} />*/}

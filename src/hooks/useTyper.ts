@@ -17,10 +17,9 @@ export const useTyper = () => {
   useEffect(() => {
     const timer1 = setInterval(() => {
       setState((pre) => {
-        if(pre.mode!='text1'){
+        if (pre.mode != "text1") {
           return pre;
-        }
-        else if (pre.mode == "text1" && pre.typedText1.length < text1len) {
+        } else if (pre.mode == "text1" && pre.typedText1.length < text1len) {
           return { ...pre, typedText1: text1.slice(0, pre.typedText1.length + 1) };
         } else if (pre.mode == "text1" && pre.typedText1.length >= text1len) {
           return { ...pre, mode: "ma" };
@@ -31,7 +30,7 @@ export const useTyper = () => {
 
     const timer2 = setInterval(() => {
       setState((pre) => {
-       if (pre.mode == "text2" && pre.typedText2.length < text2len) {
+        if (pre.mode == "text2" && pre.typedText2.length < text2len) {
           return { ...pre, typedText2: text2.slice(0, pre.typedText2.length + 1) };
         } else if (pre.mode == "text2" && pre.typedText2.length >= text2len) {
           return {
@@ -45,7 +44,7 @@ export const useTyper = () => {
 
     return function () {
       clearInterval(timer1);
-      clearInterval(timer2)
+      clearInterval(timer2);
     };
   }, []);
   return { state, setState };

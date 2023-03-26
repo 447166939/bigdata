@@ -7,12 +7,13 @@ export const CustomContainer = styled("div")`
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  overflow-x:hidden;
 `;
 export const GlassEffect = styled("div")`
   position: absolute;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(200px);
+  backdrop-filter: blur(50px);
 `;
 export const Header = styled("div")`
   display: flex;

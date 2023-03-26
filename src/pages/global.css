@@ -30,6 +30,21 @@ body,
   margin-left: 49px;
   cursor: pointer;
 }
+.home-triangle{
+position: absolute;
+  width:500px;
+  height:500px;
+}
+.home-circle{
+  position: absolute;
+  width:200px;
+  height:200px;
+}
+.home-rect{
+  position: absolute;
+  width:200px;
+  height:200px;
+}
 .home-left-top {
   width: 730px;
   height: auto;
@@ -327,7 +342,6 @@ body,
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: #fff;
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
   z-index: 90;
@@ -481,7 +495,7 @@ body,
 .home-chart-container {
   position: relative;
   border-radius: 20px;
-  background-color: #fff;
+/** background-color: #fff;**/
   top: -104px;
   left: 0;
   right: 0;
@@ -534,13 +548,12 @@ body,
 .home-chart-bottom-icon-wrapper {
   width: 44px;
   height: 44px;
-  background-color: rgba(1, 161, 255, 1);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .home-chart-bottom-icon {
-  width: 35px;
+  width: 60px;
   height: auto;
 }
 .home-chart-bottom-right {
@@ -564,7 +577,7 @@ body,
   animation: blink 1s step-end infinite;
   width: 2px;
   height: 20px;
-  background-color: #000;
+  background-color: rgba(0,0,0,0.7);
   position: absolute;
 }
 @keyframes blink {
@@ -588,7 +601,7 @@ body,
   margin-top: 23px;
 }
 .home-commerce-box {
-  background-color: rgba(244, 246, 246, 1);
+  background-color: rgba(244, 246, 246, 0.4);
   flex: 1;
   margin-top: -33px;
 }
@@ -602,7 +615,7 @@ body,
 }
 .home-product-box {
   border-radius: 20px;
-  background-color: rgba(244, 246, 246, 1);
+  /**background-color: rgba(244, 246, 246, 1);**/
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -627,7 +640,7 @@ body,
 }
 .home-metric-box {
   width: 1200px;
-  background-color: rgba(244, 246, 246, 1);
+  /**background-color: rgba(244, 246, 246, 1);**/
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -654,7 +667,7 @@ body,
   width: 100%;
 }
 .home-monitor-box {
-  background-color: rgba(244, 246, 246, 1);
+  /**background-color: rgba(244, 246, 246, 1);**/
   border-radius: 20px;
   display: flex;
   justify-content: center;

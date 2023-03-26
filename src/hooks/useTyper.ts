@@ -15,17 +15,25 @@ export const useTyper = () => {
   let text1len = text1.length;
   let text2len = text2.length;
   useEffect(() => {
-    const timer = setInterval(() => {
+    const timer1 = setInterval(() => {
       setState((pre) => {
-        if (pre.mode == "text1" && pre.typedText1.length < text1len) {
+        if(pre.mode!='text1'){
+          return pre;
+        }
+        else if (pre.mode == "text1" && pre.typedText1.length < text1len) {
           return { ...pre, typedText1: text1.slice(0, pre.typedText1.length + 1) };
         } else if (pre.mode == "text1" && pre.typedText1.length >= text1len) {
-          console.log("text1", pre);
           return { ...pre, mode: "ma" };
-        } else if (pre.mode == "text2" && pre.typedText2.length < text2len) {
+        }
+        return pre;
+      });
+    }, 20);
+
+    const timer2 = setInterval(() => {
+      setState((pre) => {
+       if (pre.mode == "text2" && pre.typedText2.length < text2len) {
           return { ...pre, typedText2: text2.slice(0, pre.typedText2.length + 1) };
         } else if (pre.mode == "text2" && pre.typedText2.length >= text2len) {
-          console.log("text2", pre);
           return {
             ...pre,
             mode: "title"
@@ -33,10 +41,11 @@ export const useTyper = () => {
         }
         return pre;
       });
-    }, 20);
+    }, 10);
 
     return function () {
-      clearInterval(timer);
+      clearInterval(timer1);
+      clearInterval(timer2)
     };
   }, []);
   return { state, setState };

@@ -5,9 +5,9 @@ import Image from "next/image";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import axios from "axios";
-import qs from 'qs';
+import qs from "qs";
 import Collapse from "@mui/material/Collapse";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 import { useClickoutside } from "@/hooks/useClickoutside";
 import { useTyper } from "@/hooks/useTyper";
 import {
@@ -18,7 +18,8 @@ import {
   MyButton,
   AskButton,
   EmailInput,
-  SubscribeButton, OkButton
+  SubscribeButton,
+  OkButton
 } from "./index.styled";
 import logo from "@/assets/logo.png";
 import person from "@/assets/person.png";
@@ -43,7 +44,7 @@ import maIcon from "@/assets/MA.png";
 import productPic from "@/assets/product_picture.png";
 import metricPic from "@/assets/metric.png";
 import monitorPic from "@/assets/monitor.png";
-import okBTn from '@/assets/okbutton.png'
+import okBTn from "@/assets/okbutton.png";
 export interface IHomeProps {}
 const index: React.FC<IHomeProps> = (props) => {
   const [isSearch, setIsSearch] = useState(false);
@@ -51,18 +52,18 @@ const index: React.FC<IHomeProps> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [state, setState] = useState({ 0: true, 1: true, 2: true });
-  const [dialogVisible,setDialogVisible]=useState(false)
-  const [tipVisible,setTipVisible]=useState(false)
-  const [email,setEmail]=useState('')
-  const [success,setSuccess]=useState(false)
+  const [dialogVisible, setDialogVisible] = useState(false);
+  const [tipVisible, setTipVisible] = useState(false);
+  const [email, setEmail] = useState("");
+  const [success, setSuccess] = useState(false);
   const rootRef = React.useRef(null);
   const sideRef = useRef(null);
-  const tipRef=useRef(null)
-  const dialogRef=useRef(null)
-  const demoRef=useRef(null)
+  const tipRef = useRef(null);
+  const dialogRef = useRef(null);
+  const demoRef = useRef(null);
   const { state: animationState, setState: setAnimationState } = useTyper();
-  useClickoutside(sideRef, closeSide,dialogRef);
-  useClickoutside(tipRef,closeTip)
+  useClickoutside(sideRef, closeSide, dialogRef);
+  useClickoutside(tipRef, closeTip);
   const { typedText1, typedText2, mode } = animationState;
   const line5Visible = mode == "line5";
   const line4Visible = mode == "line4" || line5Visible;
@@ -72,6 +73,8 @@ const index: React.FC<IHomeProps> = (props) => {
   const svgVisible = mode == "svg" || line1Visible;
   const titleVisible = mode == "title" || svgVisible;
   const maVisible = mode == "ma" || mode == "text2" || titleVisible;
+  const text1Visible=maVisible||mode=='text1'
+  const text2Visible=svgVisible||mode=='text2'
   const personVisible =
     mode == "person" ||
     mode == "text1" ||
@@ -141,18 +144,17 @@ const index: React.FC<IHomeProps> = (props) => {
       };
     }
   };
-  function openTip(){
-    setTipVisible(true)
+  function openTip() {
+    setTipVisible(true);
   }
-  function closeSide(){
-      setDrawerOpen(false)
-
-  };
-  function closeDialog(){
-    setDialogVisible(false)
+  function closeSide() {
+    setDrawerOpen(false);
   }
-  function closeTip(){
-    setTipVisible(false)
+  function closeDialog() {
+    setDialogVisible(false);
+  }
+  function closeTip() {
+    setTipVisible(false);
   }
   function svgComplete() {
     setAnimationState((pre) => {
@@ -208,24 +210,31 @@ const index: React.FC<IHomeProps> = (props) => {
     });
   }
   function line5Complete(definition: any) {
-    setAnimationState((pre) => {
-      if (pre.mode == "line5") {
-        console.log("line5", pre);
-        return {
-          ...pre,
-          mode: "text1",
-          typedText1: "",
-          typedText2: ""
-        };
-      } else {
-        return pre;
-      }
-    });
+    setTimeout(()=>{
+      setAnimationState((pre) => {
+        if (pre.mode == "line5") {
+          console.log("line5", pre);
+          return {
+            ...pre,
+            mode: "",
+            typedText1: "",
+            typedText2: ""
+          };
+        } else {
+          return pre;
+        }
+      });
+    },3000)
   }
   function personComplete() {
     setAnimationState((pre) => {
-      console.log("person");
-      if (pre.mode == "person") {
+      if(pre.mode==''){
+        return {
+          ...pre,
+          mode:'person'
+        }
+      }
+      else if (pre.mode == "person") {
         console.log("person", pre);
         return {
           ...pre,
@@ -237,18 +246,18 @@ const index: React.FC<IHomeProps> = (props) => {
       }
     });
   }
-  function emailChange(e:any){
-    setEmail(e.target.value)
+  function emailChange(e: any) {
+    setEmail(e.target.value);
   }
-  async function submit(){
-    if(email=='')return;
-    const ret=await axios.post("https://getlaunchlist.com/s/JZIFPd", qs.stringify({email}), {
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-          }
-        })
-    if(ret.data.ok==true){
-      setSuccess(true)
+  async function submit() {
+    if (email == "") return;
+    const ret = await axios.post("https://getlaunchlist.com/s/JZIFPd", qs.stringify({ email }), {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      }
+    });
+    if (ret.data.ok == true) {
+      setSuccess(true);
     }
   }
   const maComplete = () => {
@@ -304,12 +313,12 @@ const index: React.FC<IHomeProps> = (props) => {
     "target.com",
     "Costco.com"
   ];
-  function toDemo(){
-    let el=demoRef.current as HTMLDivElement|null
-    el?.scrollIntoView({behavior:'smooth'})
+  function toDemo() {
+    let el = demoRef.current as HTMLDivElement | null;
+    el?.scrollIntoView({ behavior: "smooth" });
   }
   const toggle = (mode: string) => {
-    setTipVisible(true)
+    setTipVisible(true);
     if (mode == "search") {
       setIsSearch(true);
       setIsAsk(false);
@@ -322,8 +331,8 @@ const index: React.FC<IHomeProps> = (props) => {
     setIsOpen(true);
     setDrawerOpen(true);
   };
-  function openModal(){
-    setIsOpen(true)
+  function openModal() {
+    setIsOpen(true);
   }
   const closeModal = () => {
     setIsOpen(false);
@@ -400,8 +409,12 @@ const index: React.FC<IHomeProps> = (props) => {
       </div>
       <Header>
         <Image className={"logo"} src={logo} alt={""} />
-        <div onClick={openModal} className="home-join">Join waitlist</div>
-        <div onClick={toDemo} className="home-product">Product Demo</div>
+        <div onClick={openModal} className="home-join">
+          Join waitlist
+        </div>
+        <div onClick={toDemo} className="home-product">
+          Product Demo
+        </div>
         <Image onClick={toDemo} className={"home-person"} src={person} alt={""} />
       </Header>
       <Image className={"home-small-logo"} src={smallLogo} alt={""} />
@@ -410,14 +423,22 @@ const index: React.FC<IHomeProps> = (props) => {
       <div className="home-search-input">
         <Image className={"home-search-icon"} src={searchIcon} alt={""} />
         <CustomInput placeholder="Search metrics, forecasts, ask AI"></CustomInput>
-        <Button onClick={clickSearch} className={'home-input-search-button'}>Search</Button>
+        <Button onClick={clickSearch} className={"home-input-search-button"}>
+          Search
+        </Button>
       </div>
       <div ref={tipRef} className="home-button-wrapper">
         <div className="home-search-button">
-          <Button className={clsx({'home-active-button':isSearch&&tipVisible,'home-inactive-button':!isSearch||!tipVisible})}  onClick={toggle.bind(null, "search")} variant="outlined">
+          <Button
+            className={clsx({
+              "home-active-button": isSearch && tipVisible,
+              "home-inactive-button": !isSearch || !tipVisible
+            })}
+            onClick={toggle.bind(null, "search")}
+            variant="outlined">
             search
           </Button>
-          {isSearch && tipVisible&& (
+          {isSearch && tipVisible && (
             <div className="home-search">
               <div className="home-search-left">
                 <div className="home-search-title">Product Search</div>
@@ -434,10 +455,16 @@ const index: React.FC<IHomeProps> = (props) => {
           )}
         </div>
         <div className="home-ask-button">
-          <Button  className={clsx({'home-active-button':isAsk&&tipVisible},{'home-inactive-button':!isAsk||!tipVisible})} onClick={toggle.bind(null, "ask")} variant="outlined">
+          <Button
+            className={clsx(
+              { "home-active-button": isAsk && tipVisible },
+              { "home-inactive-button": !isAsk || !tipVisible }
+            )}
+            onClick={toggle.bind(null, "ask")}
+            variant="outlined">
             Ask Metric
           </Button>
-          {isAsk && tipVisible&& (
+          {isAsk && tipVisible && (
             <div className="home-ask-metric">
               <div className="home-ask-metric-left">
                 <div className="home-ask-metric-title">Ask Metric</div>
@@ -465,7 +492,7 @@ const index: React.FC<IHomeProps> = (props) => {
               className={"home-chart-top-icon-wrapper"}>
               <Image className={"home-chart-top-icon"} src={redPerson} alt={""} />
             </motion.div>
-            <div className={clsx("home-chart-top-text", { "blink-cursor": mode == "text1" })}>
+            <div className={clsx("home-chart-top-text", { "blink-cursor": text1Visible })}>
               {typedText1}
             </div>
           </div>
@@ -475,10 +502,10 @@ const index: React.FC<IHomeProps> = (props) => {
               animate={maVisible ? "visible" : "hidden"}
               variants={maVariants}
               className={"home-chart-bottom-icon-wrapper"}>
-              <Image className={"home-chart-bottom-icon"} src={maIcon} alt={""} />
+              <Image className={"home-chart-bottom-icon"} src={smallLogo} alt={""} />
             </motion.div>
             <div className={"home-chart-bottom-right"}>
-              <div className={clsx("home-chart-bottom-text", { "blink-cursor": mode == "text2" })}>
+              <div className={clsx("home-chart-bottom-text", { "blink-cursor": text2Visible })}>
                 {typedText2}
               </div>
               <motion.div
@@ -662,7 +689,7 @@ const index: React.FC<IHomeProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className={'home-commerce-box'}>
+        <div className={"home-commerce-box"}>
           <div className={"home-report-title"}>
             Explore our omnichannel digital commerce report features
           </div>
@@ -699,7 +726,7 @@ const index: React.FC<IHomeProps> = (props) => {
             </div>
           </div>
         </div>
-        </div>
+      </div>
       <div className={"home-footer"}>
         <div className={"home-footer-glass"}></div>
         <Image className={"home-footer-left-circle"} src={footerLeftCircle} alt={""} />
@@ -745,7 +772,7 @@ const index: React.FC<IHomeProps> = (props) => {
         </div>
       </div>
       <Modal
-          ref={dialogRef}
+        ref={dialogRef}
         disablePortal
         disableEnforceFocus
         disableAutoFocus
@@ -775,9 +802,13 @@ const index: React.FC<IHomeProps> = (props) => {
             }>{`We are not officially launched yet,\nplease join our waitlist`}</div>
           <div className={"home-modal-footer"}>
             <EmailInput onChange={emailChange} placeholder={"Your email here"} />
-            {success ? <OkButton>
-              <Image className={"home-ok-button"} src={okBTn} alt={""} />
-            </OkButton> : <SubscribeButton onClick={submit}>Subscribe</SubscribeButton>}
+            {success ? (
+              <OkButton>
+                <Image className={"home-ok-button"} src={okBTn} alt={""} />
+              </OkButton>
+            ) : (
+              <SubscribeButton onClick={submit}>Subscribe</SubscribeButton>
+            )}
           </div>
         </div>
       </Modal>

@@ -40,22 +40,22 @@ export const SubscribeButton = styled(Button)`
   height: 44px;
   color: #fff;
 `;
-export const OkButton=styled(Button)`
-width: 153px;
+export const OkButton = styled(Button)`
+  width: 153px;
   height: 44px;
   color: #fff;
-`
+`;
 export const MyButton = styled<any>(Button)`
-background-image: ${props =>props.isActive ? 'linear-gradient(#00c6ff, #0078ff)' : 'none'  };
-  border-color:${props=>props.isActive ? '#d0d3d9 !important' :'none!important' }
-  color:${props=>props.isActive ? '#5d6679':''}
+background-image: ${(props) => (props.isActive ? "linear-gradient(#00c6ff, #0078ff)" : "none")};
+  border-color:${(props) => (props.isActive ? "#d0d3d9 !important" : "none!important")}
+  color:${(props) => (props.isActive ? "#5d6679" : "")}
   width: 153px!important;
 `;
 
 export const AskButton = styled<any>(Button)`
-  background-image: ${props =>props.isActive ? 'linear-gradient(#00c6ff, #0078ff)' : 'none'  };
-   border-color:${props=>props.isActive ? '#d0d3d9 !important' :'none!important' }
-  color:${props=>props.isActive ? '#5d6679':''}
+  background-image: ${(props) => (props.isActive ? "linear-gradient(#00c6ff, #0078ff)" : "none")};
+   border-color:${(props) => (props.isActive ? "#d0d3d9 !important" : "none!important")}
+  color:${(props) => (props.isActive ? "#5d6679" : "")}
   width: 153px!important;
 `;
 const Test = styled("div")``;

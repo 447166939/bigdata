@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import axios from "axios";
 import qs from "qs";
+import Router from 'next/router'
 import Collapse from "@mui/material/Collapse";
 import Button from "@mui/material/Button";
 import { useClickoutside } from "@/hooks/useClickoutside";
@@ -55,6 +56,7 @@ const index: React.FC<IHomeProps> = (props) => {
   const [dialogVisible, setDialogVisible] = useState(false);
   const [tipVisible, setTipVisible] = useState(false);
   const [email, setEmail] = useState("");
+  const [searchText,setSearchText]=useState('')
   const [success, setSuccess] = useState(false);
   const [triMode, setTriMode] = useState("start");
   const [circleMode, setCircleMode] = useState("start");
@@ -64,9 +66,10 @@ const index: React.FC<IHomeProps> = (props) => {
   const tipRef = useRef(null);
   const dialogRef = useRef(null);
   const demoRef = useRef(null);
+  const searchInputRef=useRef(null)
   const { state: animationState, setState: setAnimationState } = useTyper();
   useClickoutside(sideRef, closeSide, dialogRef);
-  useClickoutside(tipRef, closeTip);
+  useClickoutside(tipRef, closeTip,searchInputRef);
   const { typedText1, typedText2, mode } = animationState;
   const line5Visible = mode == "line5";
   const line4Visible = mode == "line4" || line5Visible;
@@ -205,6 +208,9 @@ const index: React.FC<IHomeProps> = (props) => {
       };
     }
   };
+  function searchChange(e:any){
+setSearchText(e.target.value)
+  }
   function triComplete() {
     setTriMode((pre) => {
       if (pre == "start") {
@@ -253,7 +259,6 @@ const index: React.FC<IHomeProps> = (props) => {
   function svgComplete() {
     setAnimationState((pre) => {
       if (pre.mode == "svg") {
-        console.log("svg", pre);
         return { ...pre, mode: "line1" };
       } else {
         return pre;
@@ -343,15 +348,15 @@ const index: React.FC<IHomeProps> = (props) => {
     setEmail(e.target.value);
   }
   async function submit() {
-   // const url='https://getlaunchlist.com/s/IGBWwV'
-    const url='https://getlaunchlist.com/s/JZIFPd'
+    // const url='https://getlaunchlist.com/s/IGBWwV'
+    const url = "https://getlaunchlist.com/s/JZIFPd";
     if (email == "") return;
     const ret = await axios.post(url, qs.stringify({ email }), {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
       }
     });
-    console.log('ret==',ret)
+    console.log("ret==", ret);
     if (ret.data.ok == true) {
       setSuccess(true);
     }
@@ -424,8 +429,12 @@ const index: React.FC<IHomeProps> = (props) => {
     }
   };
   const clickSearch = () => {
-    setIsOpen(true);
-    setDrawerOpen(true);
+    if(isSearch&&searchText=='computer monitor'){
+      Router.push('/monitor')
+    }else {
+      setIsOpen(true);
+      setDrawerOpen(true);
+    }
   };
   function openModal() {
     setIsOpen(true);
@@ -475,14 +484,14 @@ const index: React.FC<IHomeProps> = (props) => {
             id="paint0"
             x1="0"
             y1="0"
-            x2="300"
-            y2="300"
+            x2="600"
+            y2="600"
             gradientUnits="userSpaceOnUse">
             <motion.stop stopColor="#0078FF" />
             <motion.stop offset="1" stop-color="#00C6FF" />
           </motion.linearGradient>
         </motion.defs>
-        <motion.polygon points="150,0 0,200 300,200" fill="url(#paint0)"></motion.polygon>
+        <motion.polygon points="300,0 0,400 500,400" fill="url(#paint0)"></motion.polygon>
       </motion.svg>
       <motion.svg
         onAnimationComplete={circleComplete}
@@ -494,14 +503,14 @@ const index: React.FC<IHomeProps> = (props) => {
             id="paint1"
             x1="0"
             y1="0"
-            x2="300"
-            y2="300"
+            x2="400"
+            y2="400"
             gradientUnits="userSpaceOnUse">
             <motion.stop stopColor="#5EF529" />
             <motion.stop offset="1" stop-color="#4C97EE" />
           </motion.linearGradient>
         </motion.defs>
-        <motion.circle cx={100} cy={100} r={100} fill="url(#paint1)"></motion.circle>
+        <motion.circle cx={200} cy={200} r={200} fill="url(#paint1)"></motion.circle>
       </motion.svg>
       <motion.svg
         variants={rectVariants}
@@ -513,14 +522,14 @@ const index: React.FC<IHomeProps> = (props) => {
             id="paint2"
             x1="0"
             y1="0"
-            x2="200"
-            y2="200"
+            x2="400"
+            y2="400"
             gradientUnits="userSpaceOnUse">
             <motion.stop stopColor="#F58529" />
             <motion.stop offset="1" stop-color="#DD2A7C" />
           </motion.linearGradient>
         </motion.defs>
-        <motion.rect width="200" height="200" fill={"url(#paint2)"} />
+        <motion.rect width="400" height="400" fill={"url(#paint2)"} />
       </motion.svg>
       <GlassEffect></GlassEffect>
       <div
@@ -573,9 +582,9 @@ const index: React.FC<IHomeProps> = (props) => {
       <Image className={"home-small-logo"} src={smallLogo} alt={""} />
       <div className="home-title">Product Analysis</div>
       <div className="home-sub-title">Empowering merchants with all platform data</div>
-      <div className="home-search-input">
+      <div ref={searchInputRef} className="home-search-input">
         <Image className={"home-search-icon"} src={searchIcon} alt={""} />
-        <CustomInput placeholder="Search metrics, forecasts, ask AI"></CustomInput>
+        <CustomInput onChange={searchChange} placeholder="Search metrics, forecasts, ask AI"></CustomInput>
         <Button onClick={clickSearch} className={"home-input-search-button"}>
           Search
         </Button>

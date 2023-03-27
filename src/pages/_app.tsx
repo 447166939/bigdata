@@ -19,7 +19,6 @@ export function reportWebVitals(metric: NextWebVitalsMetric) {
   console.log(metric);
 }
 function MyApp(props: MyAppProps) {
-  // const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const { Component, ...rest } = props;
   const { store } = wrapper.useWrappedStore(rest);
   const { emotionCache = clientSideEmotionCache, pageProps } = props;

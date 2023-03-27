@@ -1,0 +1,55 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  background-color: #F0F1F3;
+}
+.header{
+  height: 100px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.logo{
+  width: 245px;
+  height: auto;
+  cursor: pointer;
+}
+.menus{
+  margin-left: 137px;
+  display: flex;
+  align-items: center;
+}
+.menu{
+margin-right: 68px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.searchBar{
+  width: 544px;
+  height: auto;
+  margin-left: auto;
+}
+.avatar{
+  width: 101px;
+  height: auto;
+  margin-left: auto;
+  margin-right: 35px;
+}
+.sidebar{
+width: 280px;
+  height: auto;
+}
+.content{
+  display: flex;
+  margin-top: 20px;
+}
+.innerContent{
+margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.pageHeader{
+  width: 1586px;
+  height: auto;
+}

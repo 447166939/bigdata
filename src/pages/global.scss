@@ -751,8 +751,6 @@ box-shadow: 0 -10px 8px rgba(50, 50, 71, 0.05);
   display: flex;
   flex-direction: column;
   position: relative;
-  border-top-left-radius: 60px;
-  border-top-right-radius: 60px;
   z-index: 90;
   box-shadow: 0 8px 59px rgba(50, 50, 71, 0.06), 0 -10px 95px rgba(38, 106, 136, 0.06);
   @media (min-width: 375px) {
@@ -762,7 +760,8 @@ box-shadow: 0 -10px 8px rgba(50, 50, 71, 0.05);
    
   }
   @media (min-width: 768px) {
-    
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
   }
 }
 .home-footer {
@@ -1142,52 +1141,47 @@ box-shadow: 0 -10px 8px rgba(50, 50, 71, 0.05);
 }
 .home-chart-container {
   position: relative;
-  border-radius: 20px;
   /** background-color: #fff;**/
-  top: -104px;
   left: 0;
   right: 0;
   margin: 0 auto 0 auto;
-  width: 1200px;
-  padding-top: 50px;
-  padding-bottom: 40px;
   box-shadow: 0px 8px 16px rgba(50, 50, 71, 0.06), 0px -10px 8px rgba(50, 50, 71, 0.08);
   @media (min-width: 375px) {
 
   }
   @media (min-width: 414px) {
-   
+   width: 400px;
   }
   @media (min-width: 768px) {
-    
+    width: 1200px;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  top: -104px;
+  border-radius: 20px;
   }
 }
 .home-chart-top-box {
   background-color: rgba(244, 246, 246, 0.7);
-  width: 1099px;
   margin: 0 auto 0 auto;
   display: flex;
   align-items: center;
-  padding-top: 29px;
-  padding-bottom: 19px;
   @media (min-width: 375px) {
 
   }
   @media (min-width: 414px) {
-   
+   width: 400px;
   }
   @media (min-width: 768px) {
-    
+    width: 1099px;
+    padding-top: 29px;
+  padding-bottom: 19px;
   }
 }
 .home-chart-top-icon-wrapper {
   background-color: rgba(241, 104, 134, 1);
-  width: 44px;
-  height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
   @media (min-width: 375px) {
 
   }
@@ -1195,7 +1189,9 @@ box-shadow: 0 -10px 8px rgba(50, 50, 71, 0.05);
    
   }
   @media (min-width: 768px) {
-    
+    width: 44px;
+  height: 44px;
+  margin-left: 20px;
   }
 }
 .home-chart-top-icon {
@@ -1213,19 +1209,20 @@ box-shadow: 0 -10px 8px rgba(50, 50, 71, 0.05);
 }
 .home-chart-top-text {
   font-weight: 400;
-  font-size: 16px;
   color: rgba(75, 82, 90, 1);
-  width: 963px;
-  margin-left: 23px;
-  height: 59px;
   @media (min-width: 375px) {
 
   }
   @media (min-width: 414px) {
-   
+    font-size: 16px;
+    margin-left: 10px;
+    height: 100px; 
   }
   @media (min-width: 768px) {
-    
+    font-size: 16px;
+    width: 963px;
+    margin-left: 23px;
+    height: 59px; 
   }
 }
 .home-chart-bottom-box {

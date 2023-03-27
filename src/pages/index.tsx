@@ -7,9 +7,12 @@ import { motion } from "framer-motion";
 import Router from "next/router";
 import Collapse from "@mui/material/Collapse";
 import Button from "@mui/material/Button";
+import Tooltip from '@mui/material/Tooltip';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+
 import { useClickoutside } from "@/hooks/useClickoutside";
 import { useTyper } from "@/hooks/useTyper";
-import Link from '@/components/Link'
+import Link from "@/components/Link";
 import {
   CustomContainer,
   GlassEffect,
@@ -48,6 +51,8 @@ const index: React.FC<IHomeProps> = (props) => {
   const [triMode, setTriMode] = useState("start");
   const [circleMode, setCircleMode] = useState("start");
   const [rectMode, setRectMode] = useState("start");
+  const [phoneTooltipOpen,setPhoneTooltipOpen]=useState(false)
+  const [emailTooltipOpen,setEmailTooltipOpen]=useState(false)
   const rootRef = React.useRef(null);
   const sideRef = useRef(null);
   const tipRef = useRef(null);
@@ -195,6 +200,18 @@ const index: React.FC<IHomeProps> = (props) => {
       };
     }
   };
+  function handleTooltipOpen(){
+    setTimeout(()=>{setPhoneTooltipOpen(true)},2000)
+  }
+  function handleTooltipClose(){
+    setPhoneTooltipOpen(false)
+  }
+  function handleEmailTooltipOpen(){
+    setTimeout(()=>{setEmailTooltipOpen(true)},2000)
+  }
+  function handleEmailTooltipClose(){
+    setEmailTooltipOpen(false)
+  }
   function searchChange(e: any) {
     setSearchText(e.target.value);
   }
@@ -916,9 +933,26 @@ const index: React.FC<IHomeProps> = (props) => {
               <div className={"home-footer-time-text"}>working hours：8:00-18:00</div>
             </div>
             <div className={"home-footer-icons"}>
-              <div className={"home-footer-icon-wrapper"}>
-                <Image className={"home-footer-phone-icon"} src={phoneIcon} alt={""} />
-              </div>
+              <ClickAwayListener onClickAway={handleTooltipClose}>
+                <div>
+                  <Tooltip
+                      placement={'top'}
+                      PopperProps={{
+                        disablePortal: true,
+                      }}
+                      onClose={handleTooltipClose}
+                      open={phoneTooltipOpen}
+                      disableFocusListener
+                      disableHoverListener
+                      disableTouchListener
+                      title="917-822-1792"
+                  >
+                    <div onMouseLeave={handleTooltipClose} onMouseEnter={handleTooltipOpen} className={"home-footer-icon-wrapper"}>
+                      <Image className={"home-footer-phone-icon"} src={phoneIcon} alt={""} />
+                    </div>
+                  </Tooltip>
+                </div>
+              </ClickAwayListener>
               <div className={"home-footer-icon-wrapper"}>
                 {" "}
                 <Image className={"home-footer-email-icon"} src={emailIcon} alt={""} />
@@ -937,7 +971,9 @@ const index: React.FC<IHomeProps> = (props) => {
         </div>
         <div className={"home-footer-right-box"}>
           <Image className={"home-footer-clutch-icon"} src={clutch} alt={""} />
-          <Link href={'https://www.linkedin.com/company/askmetric'}><Image className={"home-footer-uiclutch-icon"} src={uiclutch} alt={""} /></Link>
+          <Link href={"https://www.linkedin.com/company/askmetric"}>
+            <Image className={"home-footer-uiclutch-icon"} src={uiclutch} alt={""} />
+          </Link>
         </div>
       </div>
       <Modal

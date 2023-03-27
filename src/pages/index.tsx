@@ -6,7 +6,7 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import axios from "axios";
 import qs from "qs";
-import Router from 'next/router'
+import Router from "next/router";
 import Collapse from "@mui/material/Collapse";
 import Button from "@mui/material/Button";
 import { useClickoutside } from "@/hooks/useClickoutside";
@@ -56,7 +56,7 @@ const index: React.FC<IHomeProps> = (props) => {
   const [dialogVisible, setDialogVisible] = useState(false);
   const [tipVisible, setTipVisible] = useState(false);
   const [email, setEmail] = useState("");
-  const [searchText,setSearchText]=useState('')
+  const [searchText, setSearchText] = useState("");
   const [success, setSuccess] = useState(false);
   const [triMode, setTriMode] = useState("start");
   const [circleMode, setCircleMode] = useState("start");
@@ -66,10 +66,10 @@ const index: React.FC<IHomeProps> = (props) => {
   const tipRef = useRef(null);
   const dialogRef = useRef(null);
   const demoRef = useRef(null);
-  const searchInputRef=useRef(null)
+  const searchInputRef = useRef(null);
   const { state: animationState, setState: setAnimationState } = useTyper();
   useClickoutside(sideRef, closeSide, dialogRef);
-  useClickoutside(tipRef, closeTip,searchInputRef);
+  useClickoutside(tipRef, closeTip, searchInputRef);
   const { typedText1, typedText2, mode } = animationState;
   const line5Visible = mode == "line5";
   const line4Visible = mode == "line4" || line5Visible;
@@ -99,8 +99,8 @@ const index: React.FC<IHomeProps> = (props) => {
       return {
         transform: "translate(1920px,900px)",
         transition: {
-          delay: 3,
-          duration: 20
+          delay: 8,
+          duration: 25
         }
       };
     },
@@ -119,7 +119,7 @@ const index: React.FC<IHomeProps> = (props) => {
       return {
         transform: "translate(-400px,900px)",
         transition: {
-          duration: 20
+          duration: 25
         }
       };
     },
@@ -133,18 +133,18 @@ const index: React.FC<IHomeProps> = (props) => {
     }
   };
   const rectVariants = {
-    start: { transform: "translate(-200px,200px)" },
+    start: { transform: "translate(-400px,400px)" },
     end: (i: number) => {
       return {
         transform: "translate(1600px,2000px)",
         transition: {
-          duration: 20
+          duration: 25
         }
       };
     },
     back: () => {
       return {
-        transform: "translate(-200px,600px)",
+        transform: "translate(-400px,600px)",
         transition: {
           duration: 0
         }
@@ -208,8 +208,8 @@ const index: React.FC<IHomeProps> = (props) => {
       };
     }
   };
-  function searchChange(e:any){
-setSearchText(e.target.value)
+  function searchChange(e: any) {
+    setSearchText(e.target.value);
   }
   function triComplete() {
     setTriMode((pre) => {
@@ -429,9 +429,9 @@ setSearchText(e.target.value)
     }
   };
   const clickSearch = () => {
-    if(isSearch&&searchText=='computer monitor'){
-      Router.push('/monitor')
-    }else {
+    if (isSearch && searchText == "computer monitor") {
+      Router.push("/monitor");
+    } else {
       setIsOpen(true);
       setDrawerOpen(true);
     }
@@ -584,7 +584,9 @@ setSearchText(e.target.value)
       <div className="home-sub-title">Empowering merchants with all platform data</div>
       <div ref={searchInputRef} className="home-search-input">
         <Image className={"home-search-icon"} src={searchIcon} alt={""} />
-        <CustomInput onChange={searchChange} placeholder="Search metrics, forecasts, ask AI"></CustomInput>
+        <CustomInput
+          onChange={searchChange}
+          placeholder="Search metrics, forecasts, ask AI"></CustomInput>
         <Button onClick={clickSearch} className={"home-input-search-button"}>
           Search
         </Button>

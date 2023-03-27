@@ -212,19 +212,31 @@ margin-top: 20px;
     margin-bottom: 378px;
   }
 }
-.home-ask-metric {
+.home-ask-metric{
+  margin-top: 48px;
   display: flex;
-  align-items: center;
   width: 714px;
-  min-height: 427px;
-  background-size: 100% auto;
-  z-index: 100;
-  background-repeat: no-repeat;
-  background-image: url("../assets/Shape.png");
-  background-position: center;
+  align-items: center;
+  z-index: 110;
+  background-color: #FEFEFE;
+  position: relative;
+  border-radius: 30px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  box-shadow: 0 8px 16px rgba(50, 50, 71, 0.05), 0 -10px 8px rgba(50, 50, 71, 0.05);
+  padding: 76px 0 76px 0;
+  &::before{
+      content: '.';
+position: absolute;
+background-color: #FEFEFE;
+width: 34px;
+height: 34px;
+transform: translateX(-50%) rotate(-45deg);
+box-shadow: 0 -10px 8px rgba(50, 50, 71, 0.05);
+top: -17px;
+left: 50%;
+  }
 }
 .home-ask-metric-left {
   width: 377px;
@@ -326,27 +338,30 @@ margin-top: 20px;
     height: 44px !important;
   }
 }
-.home-search {
+.home-search{
+  margin-top: 48px;
   display: flex;
+  width: 714px;
   align-items: center;
-  background-size: 100% auto;
-  z-index: 100;
-  background-repeat: no-repeat;
-  background-image: url("../assets/Shape.png");
-  background-position: center;
+  z-index: 110;
+  background-color: #FEFEFE;
+  position: relative;
+  border-radius: 30px;
   position: absolute;
   left: 50%;
-  @media (min-width: 375px) {
-
-  }
-  @media (min-width: 414px) {
-   width: 400px;
-    transform: translateX(-32%);
-  }
-  @media (min-width: 768px) {
-    width: 714px;
-    min-height: 427px;
-    transform: translateX(-50%);
+  transform: translateX(-50%);
+  box-shadow: 0 8px 16px rgba(50, 50, 71, 0.05), 0 -10px 8px rgba(50, 50, 71, 0.05);
+  padding: 76px 0 76px 0;
+  &::before{
+      content: '.';
+position: absolute;
+background-color: #FEFEFE;
+width: 34px;
+height: 34px;
+transform: translateX(-50%) rotate(-45deg);
+box-shadow: 0 -10px 8px rgba(50, 50, 71, 0.05);
+top: -17px;
+left: 50%;
   }
 }
 .home-search-left {

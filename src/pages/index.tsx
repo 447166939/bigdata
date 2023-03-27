@@ -949,8 +949,7 @@ const index: React.FC<IHomeProps> = (props) => {
                     disableFocusListener
                     disableHoverListener
                     disableTouchListener
-                    title={<div className="home-phone-tooltip">917-822-1792</div>}
-                    >
+                    title={<div className="home-phone-tooltip">917-822-1792</div>}>
                     <div
                       onMouseLeave={handleTooltipClose}
                       onMouseEnter={handleTooltipOpen}
@@ -972,10 +971,12 @@ const index: React.FC<IHomeProps> = (props) => {
                     disableFocusListener
                     disableHoverListener
                     disableTouchListener
-                    title={<div className="home-email-tooltip">
-                      <div>info@askmetric.com</div>
-                      <div>zion.flatsphere@gmail.com</div>
-                    </div>}>
+                    title={
+                      <div className="home-email-tooltip">
+                        <div>info@askmetric.com</div>
+                        <div>zion.flatsphere@gmail.com</div>
+                      </div>
+                    }>
                     <div
                       onMouseLeave={handleEmailTooltipClose}
                       onMouseEnter={handleEmailTooltipOpen}

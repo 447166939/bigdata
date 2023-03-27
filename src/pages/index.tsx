@@ -94,7 +94,7 @@ const index: React.FC<IHomeProps> = (props) => {
     mode == "line4" ||
     mode == "line5";
   const triangleVariants = {
-    start: { transform: "translate(-250px,-250px)" },
+    start: { transform: "translate(-300px,-300px)" },
     end: (i: number) => {
       return {
         transform: "translate(1920px,900px)",
@@ -106,7 +106,7 @@ const index: React.FC<IHomeProps> = (props) => {
     },
     back: () => {
       return {
-        transform: "translate(-250px,-250px)",
+        transform: "translate(-300px,-300px)",
         transition: {
           duration: 0
         }
@@ -133,7 +133,7 @@ const index: React.FC<IHomeProps> = (props) => {
     }
   };
   const rectVariants = {
-    start: { transform: "translate(-250px,400px)" },
+    start: { transform: "translate(-300px,400px)" },
     end: (i: number) => {
       return {
         transform: "translate(1600px,2000px)",
@@ -144,7 +144,7 @@ const index: React.FC<IHomeProps> = (props) => {
     },
     back: () => {
       return {
-        transform: "translate(-250px,600px)",
+        transform: "translate(-300px,600px)",
         transition: {
           duration: 0
         }
@@ -478,7 +478,7 @@ const index: React.FC<IHomeProps> = (props) => {
       <Image className={"home-right-bottom"} src={rightBottom} alt={""} />*/}
       <motion.svg
         onAnimationComplete={triComplete}
-variants={triangleVariants}
+        variants={triangleVariants}
         animate={triMode}
         className={"home-triangle"}>
         <motion.defs>
@@ -486,14 +486,14 @@ variants={triangleVariants}
             id="paint0"
             x1="0"
             y1="0"
-            x2="400"
-            y2="400"
+            x2="300"
+            y2="300"
             gradientUnits="userSpaceOnUse">
             <motion.stop stopColor="#0078FF" />
             <motion.stop offset="1" stop-color="#00C6FF" />
           </motion.linearGradient>
         </motion.defs>
-        <motion.polygon points="125,0 0,250 250,250" fill="url(#paint0)"></motion.polygon>
+        <motion.polygon points="150,0 0,300 300,300" fill="url(#paint0)"></motion.polygon>
       </motion.svg>
       <motion.svg
         onAnimationComplete={circleComplete}
@@ -531,7 +531,7 @@ variants={triangleVariants}
             <motion.stop offset="1" stop-color="#DD2A7C" />
           </motion.linearGradient>
         </motion.defs>
-        <motion.rect width="250" height="250" fill={"url(#paint2)"} />
+        <motion.rect width="300" height="300" fill={"url(#paint2)"} />
       </motion.svg>
       <GlassEffect></GlassEffect>
       <div
@@ -969,7 +969,7 @@ variants={triangleVariants}
           <div className={"home-modal-footer"}>
             <EmailInput onChange={emailChange} placeholder={"Your email here"} />
             {success ? (
-              <OkButton>
+              <OkButton onClick={closeModal}>
                 <Image className={"home-ok-button"} src={okBTn} alt={""} />
               </OkButton>
             ) : (

@@ -4,45 +4,31 @@ import Icon from "@mui/material/Icon";
 import Image from "next/image";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import axios from "axios";
-import qs from "qs";
-import $ from "jquery";
 import Router from "next/router";
 import Collapse from "@mui/material/Collapse";
 import Button from "@mui/material/Button";
 import { useClickoutside } from "@/hooks/useClickoutside";
 import { useTyper } from "@/hooks/useTyper";
+import Link from '@/components/Link'
 import {
   CustomContainer,
   GlassEffect,
   Header,
   CustomInput,
-  MyButton,
-  AskButton,
-  EmailInput,
   SubscribeButton,
   OkButton
 } from "./index.styled";
 import logo from "@/assets/logo.png";
 import person from "@/assets/person.png";
-import leftTop from "@/assets/left_top.png";
-import rightTop from "@/assets/right_top.png";
-import rightBottom from "@/assets/right_bottom.png";
 import smallLogo from "@/assets/small_logo.png";
 import searchIcon from "@/assets/Search.png";
 import fireIcon from "@/assets/fire.png";
 import downIcon from "@/assets/down.png";
-import footerLeftCircle from "@/assets/footer_left_circle.png";
-import footerRightCircle from "@/assets/footer_right_circle.png";
 import phoneIcon from "@/assets/phone.png";
 import emailIcon from "@/assets/email.png";
-import eyeIcon from "@/assets/eye.png";
-import weixinIcon from "@/assets/weixin.png";
-import douyinIcon from "@/assets/douyin.png";
 import clutch from "@/assets/clutch.png";
 import uiclutch from "@/assets/uiclutch .png";
 import redPerson from "@/assets/red_person .png";
-import maIcon from "@/assets/MA.png";
 import productPic from "@/assets/product_picture.png";
 import metricPic from "@/assets/metric.png";
 import monitorPic from "@/assets/monitor.png";
@@ -951,7 +937,7 @@ const index: React.FC<IHomeProps> = (props) => {
         </div>
         <div className={"home-footer-right-box"}>
           <Image className={"home-footer-clutch-icon"} src={clutch} alt={""} />
-          <Image className={"home-footer-uiclutch-icon"} src={uiclutch} alt={""} />
+          <Link href={'https://www.linkedin.com/company/askmetric'}><Image className={"home-footer-uiclutch-icon"} src={uiclutch} alt={""} /></Link>
         </div>
       </div>
       <Modal

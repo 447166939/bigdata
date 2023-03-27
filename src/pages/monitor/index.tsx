@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./monitor.module.scss";
 import Image from "next/image";
+import clsx from 'clsx';
 import logo from "@/assets/logo.png";
 import searchBar from "../../assets/search_bar.png";
 import avatar from "../../assets/avatar.png";
@@ -31,7 +32,7 @@ const MonitorPage: React.FC<MonitorProps> = () => {
         <Image className={styles.logo} src={logo} alt={""} />
         <div className={styles.menus}>
           {menus.map((item, index) => (
-            <div className={styles.menu} onClick={clickMenu.bind(null, item)} key={index}>
+            <div className={clsx(styles.menu,{[styles.active]:item==menu})} onClick={clickMenu.bind(null, item)} key={index}>
               {item}
             </div>
           ))}

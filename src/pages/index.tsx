@@ -94,19 +94,19 @@ const index: React.FC<IHomeProps> = (props) => {
     mode == "line4" ||
     mode == "line5";
   const triangleVariants = {
-    start: { transform: "translate(-500px,-500px)" },
+    start: { transform: "translate(-200px,-200px)" },
     end: (i: number) => {
       return {
         transform: "translate(1920px,900px)",
         transition: {
-          delay: 8,
+          delay: 5,
           duration: 25
         }
       };
     },
     back: () => {
       return {
-        transform: "translate(-500px,-500px)",
+        transform: "translate(-200px,-200px)",
         transition: {
           duration: 0
         }
@@ -133,7 +133,7 @@ const index: React.FC<IHomeProps> = (props) => {
     }
   };
   const rectVariants = {
-    start: { transform: "translate(-400px,400px)" },
+    start: { transform: "translate(-200px,400px)" },
     end: (i: number) => {
       return {
         transform: "translate(1600px,2000px)",
@@ -144,7 +144,7 @@ const index: React.FC<IHomeProps> = (props) => {
     },
     back: () => {
       return {
-        transform: "translate(-400px,600px)",
+        transform: "translate(-200px,600px)",
         transition: {
           duration: 0
         }
@@ -430,7 +430,9 @@ const index: React.FC<IHomeProps> = (props) => {
   };
   const clickSearch = () => {
     if (isSearch && searchText == "computer monitor") {
-      Router.push("/monitor");
+      setTimeout(()=>{
+        Router.push("/monitor");
+      },1000)
     } else {
       setIsOpen(true);
       setDrawerOpen(true);
@@ -484,14 +486,14 @@ const index: React.FC<IHomeProps> = (props) => {
             id="paint0"
             x1="0"
             y1="0"
-            x2="600"
-            y2="600"
+            x2="400"
+            y2="400"
             gradientUnits="userSpaceOnUse">
             <motion.stop stopColor="#0078FF" />
             <motion.stop offset="1" stop-color="#00C6FF" />
           </motion.linearGradient>
         </motion.defs>
-        <motion.polygon points="300,0 0,400 500,400" fill="url(#paint0)"></motion.polygon>
+        <motion.polygon points="100,0 0,200 200,200" fill="url(#paint0)"></motion.polygon>
       </motion.svg>
       <motion.svg
         onAnimationComplete={circleComplete}
@@ -503,14 +505,14 @@ const index: React.FC<IHomeProps> = (props) => {
             id="paint1"
             x1="0"
             y1="0"
-            x2="400"
-            y2="400"
+            x2="300"
+            y2="300"
             gradientUnits="userSpaceOnUse">
             <motion.stop stopColor="#5EF529" />
             <motion.stop offset="1" stop-color="#4C97EE" />
           </motion.linearGradient>
         </motion.defs>
-        <motion.circle cx={200} cy={200} r={200} fill="url(#paint1)"></motion.circle>
+        <motion.circle cx={100} cy={100} r={100} fill="url(#paint1)"></motion.circle>
       </motion.svg>
       <motion.svg
         variants={rectVariants}
@@ -522,14 +524,14 @@ const index: React.FC<IHomeProps> = (props) => {
             id="paint2"
             x1="0"
             y1="0"
-            x2="400"
-            y2="400"
+            x2="300"
+            y2="300"
             gradientUnits="userSpaceOnUse">
             <motion.stop stopColor="#F58529" />
             <motion.stop offset="1" stop-color="#DD2A7C" />
           </motion.linearGradient>
         </motion.defs>
-        <motion.rect width="400" height="400" fill={"url(#paint2)"} />
+        <motion.rect width="200" height="200" fill={"url(#paint2)"} />
       </motion.svg>
       <GlassEffect></GlassEffect>
       <div

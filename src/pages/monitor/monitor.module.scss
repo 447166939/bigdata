@@ -24,6 +24,20 @@ margin-right: 68px;
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
+  color: #383E49;
+}
+.active{
+  color: #007CFF;
+  position: relative;
+  &:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #007CFF;
+  }
 }
 .searchBar{
   width: 544px;

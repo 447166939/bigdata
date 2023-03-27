@@ -94,7 +94,7 @@ const index: React.FC<IHomeProps> = (props) => {
     mode == "line4" ||
     mode == "line5";
   const triangleVariants = {
-    start: { transform: "translate(-200px,-200px)" },
+    start: { transform: "translate(-250px,-250px)" },
     end: (i: number) => {
       return {
         transform: "translate(1920px,900px)",
@@ -106,7 +106,7 @@ const index: React.FC<IHomeProps> = (props) => {
     },
     back: () => {
       return {
-        transform: "translate(-200px,-200px)",
+        transform: "translate(-250px,-250px)",
         transition: {
           duration: 0
         }
@@ -133,7 +133,7 @@ const index: React.FC<IHomeProps> = (props) => {
     }
   };
   const rectVariants = {
-    start: { transform: "translate(-200px,400px)" },
+    start: { transform: "translate(-250px,400px)" },
     end: (i: number) => {
       return {
         transform: "translate(1600px,2000px)",
@@ -144,7 +144,7 @@ const index: React.FC<IHomeProps> = (props) => {
     },
     back: () => {
       return {
-        transform: "translate(-200px,600px)",
+        transform: "translate(-250px,600px)",
         transition: {
           duration: 0
         }
@@ -430,9 +430,9 @@ const index: React.FC<IHomeProps> = (props) => {
   };
   const clickSearch = () => {
     if (isSearch && searchText == "computer monitor") {
-      setTimeout(()=>{
+      setTimeout(() => {
         Router.push("/monitor");
-      },1000)
+      }, 1000);
     } else {
       setIsOpen(true);
       setDrawerOpen(true);
@@ -478,7 +478,7 @@ const index: React.FC<IHomeProps> = (props) => {
       <Image className={"home-right-bottom"} src={rightBottom} alt={""} />*/}
       <motion.svg
         onAnimationComplete={triComplete}
-        variants={triangleVariants}
+variants={triangleVariants}
         animate={triMode}
         className={"home-triangle"}>
         <motion.defs>
@@ -493,7 +493,7 @@ const index: React.FC<IHomeProps> = (props) => {
             <motion.stop offset="1" stop-color="#00C6FF" />
           </motion.linearGradient>
         </motion.defs>
-        <motion.polygon points="100,0 0,200 200,200" fill="url(#paint0)"></motion.polygon>
+        <motion.polygon points="125,0 0,250 250,250" fill="url(#paint0)"></motion.polygon>
       </motion.svg>
       <motion.svg
         onAnimationComplete={circleComplete}
@@ -512,7 +512,7 @@ const index: React.FC<IHomeProps> = (props) => {
             <motion.stop offset="1" stop-color="#4C97EE" />
           </motion.linearGradient>
         </motion.defs>
-        <motion.circle cx={100} cy={100} r={100} fill="url(#paint1)"></motion.circle>
+        <motion.circle cx={150} cy={150} r={150} fill="url(#paint1)"></motion.circle>
       </motion.svg>
       <motion.svg
         variants={rectVariants}
@@ -531,7 +531,7 @@ const index: React.FC<IHomeProps> = (props) => {
             <motion.stop offset="1" stop-color="#DD2A7C" />
           </motion.linearGradient>
         </motion.defs>
-        <motion.rect width="200" height="200" fill={"url(#paint2)"} />
+        <motion.rect width="250" height="250" fill={"url(#paint2)"} />
       </motion.svg>
       <GlassEffect></GlassEffect>
       <div

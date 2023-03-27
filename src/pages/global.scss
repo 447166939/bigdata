@@ -336,16 +336,17 @@ margin-top: 20px;
   background-position: center;
   position: absolute;
   left: 50%;
-  transform: translateX(-32%);
   @media (min-width: 375px) {
 
   }
   @media (min-width: 414px) {
    width: 400px;
+    transform: translateX(-32%);
   }
   @media (min-width: 768px) {
     width: 714px;
     min-height: 427px;
+    transform: translateX(-50%);
   }
 }
 .home-search-left {
@@ -454,6 +455,15 @@ margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.home-form-input{
+  width: 390px;
+  height: 44px;
+  border: 1px solid #D0D5DD!important;
+  outline: none;
+  padding: 10px 14px 10px 14px;
+  border-radius: 8px;
+  font-size: 16px;
 }
 .home-side-container {
   padding: 38px 43px 0 44px;

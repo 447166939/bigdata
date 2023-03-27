@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import axios from "axios";
 import qs from "qs";
+import $ from 'jquery';
 import Router from "next/router";
 import Collapse from "@mui/material/Collapse";
 import Button from "@mui/material/Button";
@@ -268,7 +269,6 @@ const index: React.FC<IHomeProps> = (props) => {
   function line1Complete() {
     setAnimationState((pre: any) => {
       if (pre.mode == "line1") {
-        console.log("line1", pre);
         return { ...pre, mode: "line2" };
       } else {
         return pre;
@@ -278,7 +278,6 @@ const index: React.FC<IHomeProps> = (props) => {
   function line2Complete() {
     setAnimationState((pre) => {
       if (pre.mode == "line2") {
-        console.log("line2", pre);
         return {
           ...pre,
           mode: "line3"
@@ -289,7 +288,6 @@ const index: React.FC<IHomeProps> = (props) => {
   function line3Compolete() {
     setAnimationState((pre) => {
       if (pre.mode == "line3") {
-        console.log("line3", pre);
         return {
           ...pre,
           mode: "line4"
@@ -301,7 +299,6 @@ const index: React.FC<IHomeProps> = (props) => {
   function line4Compolete() {
     setAnimationState((pre) => {
       if (pre.mode == "line4") {
-        console.log("line4", pre);
         return { ...pre, mode: "line5" };
       } else {
         return pre;
@@ -312,7 +309,6 @@ const index: React.FC<IHomeProps> = (props) => {
     setTimeout(() => {
       setAnimationState((pre) => {
         if (pre.mode == "line5") {
-          console.log("line5", pre);
           return {
             ...pre,
             mode: "",
@@ -333,7 +329,6 @@ const index: React.FC<IHomeProps> = (props) => {
           mode: "person"
         };
       } else if (pre.mode == "person") {
-        console.log("person", pre);
         return {
           ...pre,
           mode: "text1",
@@ -348,23 +343,45 @@ const index: React.FC<IHomeProps> = (props) => {
     setEmail(e.target.value);
   }
   async function submit() {
-    // const url='https://getlaunchlist.com/s/IGBWwV'
-    const url = "https://getlaunchlist.com/s/JZIFPd";
-    if (email == "") return;
-    const ret = await axios.post(url, qs.stringify({ email }), {
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      }
-    });
-    console.log("ret==", ret);
-    if (ret.data.ok == true) {
+
+    try{
+      const url='https://getlaunchlist.com/s/IGBWwV'
+      //const url = "https://getlaunchlist.com/s/JZIFPd";
+      if (email == "") return;
+     /* let formData=new FormData()
+      formData.append('name','askmetric')
+      formData.append('email',email)
+      const transFun =(data = {}) => Object.entries(data).map(ent => ent.join("=")).join("&")
+     let ret=await axios.post(url,formData,{headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},transformRequest: transFun})
+      console.log('ret',ret)*/
+      /*var iframe=document.createElement('iframe');
+      iframe.name='myiframe'
+      iframe.id="myiframe";
+      var postForm=document.createElement('form')
+      postForm.method='post'
+      postForm.action=url
+      postForm.target='myiframe'
+      var emailInput=document.createElement('input')
+      emailInput.setAttribute('name','email')
+      emailInput.setAttribute('value',email)
+      var nameInput=document.createElement('input')
+      nameInput.setAttribute('name','name')
+      nameInput.setAttribute('value','askmetric')
+      postForm.appendChild(emailInput)
+      postForm.appendChild(nameInput)
+      document.body.appendChild(iframe)
+      document.body.appendChild(postForm)
+      postForm.submit();
+      document.body.removeChild(postForm)
+      document.body.removeChild(iframe)*/
       setSuccess(true);
+    }catch (e){
+      setSuccess(false)
     }
   }
   const maComplete = () => {
     setAnimationState((pre) => {
       if (pre.mode == "ma") {
-        console.log("ma", pre);
         return {
           ...pre,
           mode: "text2"
@@ -377,7 +394,6 @@ const index: React.FC<IHomeProps> = (props) => {
   const titleComplete = () => {
     setAnimationState((pre) => {
       if (pre.mode == "title") {
-        console.log("title", pre);
         return {
           ...pre,
           mode: "svg"
@@ -443,6 +459,8 @@ const index: React.FC<IHomeProps> = (props) => {
   }
   const closeModal = () => {
     setIsOpen(false);
+    setSuccess(false)
+    setEmail('')
   };
   const openDrawer = () => {
     setDrawerOpen(true);
@@ -490,7 +508,7 @@ const index: React.FC<IHomeProps> = (props) => {
             y2="300"
             gradientUnits="userSpaceOnUse">
             <motion.stop stopColor="#0078FF" />
-            <motion.stop offset="1" stop-color="#00C6FF" />
+            <motion.stop offset="1" stopColor="#00C6FF" />
           </motion.linearGradient>
         </motion.defs>
         <motion.polygon points="150,0 0,300 300,300" fill="url(#paint0)"></motion.polygon>
@@ -509,7 +527,7 @@ const index: React.FC<IHomeProps> = (props) => {
             y2="300"
             gradientUnits="userSpaceOnUse">
             <motion.stop stopColor="#5EF529" />
-            <motion.stop offset="1" stop-color="#4C97EE" />
+            <motion.stop offset="1" stopColor="#4C97EE" />
           </motion.linearGradient>
         </motion.defs>
         <motion.circle cx={150} cy={150} r={150} fill="url(#paint1)"></motion.circle>
@@ -528,7 +546,7 @@ const index: React.FC<IHomeProps> = (props) => {
             y2="300"
             gradientUnits="userSpaceOnUse">
             <motion.stop stopColor="#F58529" />
-            <motion.stop offset="1" stop-color="#DD2A7C" />
+            <motion.stop offset="1" stopColor="#DD2A7C" />
           </motion.linearGradient>
         </motion.defs>
         <motion.rect width="300" height="300" fill={"url(#paint2)"} />
@@ -909,7 +927,7 @@ const index: React.FC<IHomeProps> = (props) => {
           </div>
           <div className={"home-footer-bottom-row"}>
             <div>
-              <div className={"home-footer-phone-text"}>400-100-8888</div>
+              <div className={"home-footer-phone-text"}> 917-822-1792</div>
               <div className={"home-footer-time-text"}>working hours：8:00-18:00</div>
             </div>
             <div className={"home-footer-icons"}>
@@ -966,16 +984,17 @@ const index: React.FC<IHomeProps> = (props) => {
             className={
               "home-modal-content"
             }>{`We are not officially launched yet,\nplease join our waitlist`}</div>
-          <div className={"home-modal-footer"}>
-            <EmailInput onChange={emailChange} placeholder={"Your email here"} />
+          <iframe style={{display:'none'}} id={'form'} name={'form'}></iframe>
+          <form onSubmit={submit} action="https://getlaunchlist.com/s/IGBWwV" method="POST" target={'form'} className={"home-modal-footer"}>
+            <input className={'home-form-input'} name={'email'} onChange={emailChange} placeholder={"Your email here"} />
             {success ? (
               <OkButton onClick={closeModal}>
                 <Image className={"home-ok-button"} src={okBTn} alt={""} />
               </OkButton>
             ) : (
-              <SubscribeButton onClick={submit}>Subscribe</SubscribeButton>
+              <SubscribeButton type={'submit'}>Subscribe</SubscribeButton>
             )}
-          </div>
+          </form>
         </div>
       </Modal>
     </CustomContainer>

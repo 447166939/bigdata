@@ -6,7 +6,7 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import axios from "axios";
 import qs from "qs";
-import $ from 'jquery';
+import $ from "jquery";
 import Router from "next/router";
 import Collapse from "@mui/material/Collapse";
 import Button from "@mui/material/Button";
@@ -343,12 +343,11 @@ const index: React.FC<IHomeProps> = (props) => {
     setEmail(e.target.value);
   }
   async function submit() {
-
-    try{
-      const url='https://getlaunchlist.com/s/IGBWwV'
+    try {
+      const url = "https://getlaunchlist.com/s/IGBWwV";
       //const url = "https://getlaunchlist.com/s/JZIFPd";
       if (email == "") return;
-     /* let formData=new FormData()
+      /* let formData=new FormData()
       formData.append('name','askmetric')
       formData.append('email',email)
       const transFun =(data = {}) => Object.entries(data).map(ent => ent.join("=")).join("&")
@@ -375,8 +374,8 @@ const index: React.FC<IHomeProps> = (props) => {
       document.body.removeChild(postForm)
       document.body.removeChild(iframe)*/
       setSuccess(true);
-    }catch (e){
-      setSuccess(false)
+    } catch (e) {
+      setSuccess(false);
     }
   }
   const maComplete = () => {
@@ -459,8 +458,8 @@ const index: React.FC<IHomeProps> = (props) => {
   }
   const closeModal = () => {
     setIsOpen(false);
-    setSuccess(false)
-    setEmail('')
+    setSuccess(false);
+    setEmail("");
   };
   const openDrawer = () => {
     setDrawerOpen(true);
@@ -597,7 +596,7 @@ const index: React.FC<IHomeProps> = (props) => {
         <div onClick={toDemo} className="home-product">
           Product Demo
         </div>
-        <Image onClick={toDemo} className={"home-person"} src={person} alt={""} />
+        <Image onClick={openModal} className={"home-person"} src={person} alt={""} />
       </Header>
       <Image className={"home-small-logo"} src={smallLogo} alt={""} />
       <div className="home-title">Product Analysis</div>
@@ -606,7 +605,7 @@ const index: React.FC<IHomeProps> = (props) => {
         <Image className={"home-search-icon"} src={searchIcon} alt={""} />
         <CustomInput
           onChange={searchChange}
-          placeholder="Search metrics, forecasts, ask AI"></CustomInput>
+          placeholder="search keyword, product, Ask AI"></CustomInput>
         <Button onClick={clickSearch} className={"home-input-search-button"}>
           Search
         </Button>
@@ -984,15 +983,25 @@ const index: React.FC<IHomeProps> = (props) => {
             className={
               "home-modal-content"
             }>{`We are not officially launched yet,\nplease join our waitlist`}</div>
-          <iframe style={{display:'none'}} id={'form'} name={'form'}></iframe>
-          <form onSubmit={submit} action="https://getlaunchlist.com/s/IGBWwV" method="POST" target={'form'} className={"home-modal-footer"}>
-            <input className={'home-form-input'} name={'email'} onChange={emailChange} placeholder={"Your email here"} />
+          <iframe style={{ display: "none" }} id={"form"} name={"form"}></iframe>
+          <form
+            onSubmit={submit}
+            action="https://getlaunchlist.com/s/IGBWwV"
+            method="POST"
+            target={"form"}
+            className={"home-modal-footer"}>
+            <input
+              className={"home-form-input"}
+              name={"email"}
+              onChange={emailChange}
+              placeholder={"Your email here"}
+            />
             {success ? (
               <OkButton onClick={closeModal}>
                 <Image className={"home-ok-button"} src={okBTn} alt={""} />
               </OkButton>
             ) : (
-              <SubscribeButton type={'submit'}>Subscribe</SubscribeButton>
+              <SubscribeButton type={"submit"}>Subscribe</SubscribeButton>
             )}
           </form>
         </div>

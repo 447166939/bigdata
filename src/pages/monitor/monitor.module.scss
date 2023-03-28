@@ -4,31 +4,73 @@
   background-color: #F0F1F3;
 }
 .header{
-  height: 100px;
   background-color: #fff;
   display: flex;
   align-items: center;
+  @media (min-width: 375px) {
+
+  }
+  @media (min-width: 414px) {
+height: 60px;
+  }
+  @media (min-width: 768px) {
+    height: 100px;
+  }
 }
 .logo{
-  width: 245px;
   height: auto;
   cursor: pointer;
+  @media (min-width: 375px) {
+
+  }
+  @media (min-width: 414px) {
+width: 100px;
+  }
+  @media (min-width: 768px) {
+    width: 245px;
+  }
 }
 .menus{
-  margin-left: 137px;
   display: flex;
   align-items: center;
+  @media (min-width: 375px) {
+
+  }
+  @media (min-width: 414px) {
+
+  }
+  @media (min-width: 768px) {
+    margin-left: 137px;
+  }
 }
 .menu{
-margin-right: 68px;
-  font-size: 18px;
   font-weight: 600;
   cursor: pointer;
   color: #383E49;
+  @media (min-width: 375px) {
+
+  }
+  @media (min-width: 414px) {
+font-size: 12px;
+    margin-right: 10px;
+  }
+  @media (min-width: 768px) {
+    font-size: 18px;
+    margin-right: 68px;
+  }
 }
 .active{
   color: #007CFF;
   position: relative;
+  @media (min-width: 375px) {
+
+  }
+  @media (min-width: 414px) {
+
+  }
+  @media (min-width: 768px) {
+
+  }
   &:after{
     content: '';
     position: absolute;
@@ -37,33 +79,94 @@ margin-right: 68px;
     height: 3px;
     width: 100%;
     background-color: #007CFF;
+    @media (min-width: 375px) {
+
+    }
+    @media (min-width: 414px) {
+
+    }
+    @media (min-width: 768px) {
+
+    }
   }
 }
 .searchBar{
-  width: 544px;
   height: auto;
   margin-left: auto;
+  @media (min-width: 375px) {
+
+  }
+  @media (min-width: 414px) {
+width: 200px;
+  }
+  @media (min-width: 768px) {
+    width: 544px;
+  }
 }
 .avatar{
-  width: 101px;
   height: auto;
   margin-left: auto;
-  margin-right: 35px;
+  @media (min-width: 375px) {
+
+  }
+  @media (min-width: 414px) {
+width: 50px;
+  }
+  @media (min-width: 768px) {
+    width: 101px;
+    margin-right: 35px;
+  }
 }
 .sidebar{
 width: 280px;
   height: auto;
+  @media (min-width: 375px) {
+
+  }
+  @media (min-width: 414px) {
+
+  }
+  @media (min-width: 768px) {
+
+  }
 }
 .content{
   display: flex;
   margin-top: 20px;
+  @media (min-width: 375px) {
+
+  }
+  @media (min-width: 414px) {
+
+  }
+  @media (min-width: 768px) {
+
+  }
 }
 .innerContent{
 margin-left: 20px;
   display: flex;
   flex-direction: column;
+  @media (min-width: 375px) {
+
+  }
+  @media (min-width: 414px) {
+
+  }
+  @media (min-width: 768px) {
+
+  }
 }
 .pageHeader{
   width: 1586px;
   height: auto;
+  @media (min-width: 375px) {
+
+  }
+  @media (min-width: 414px) {
+
+  }
+  @media (min-width: 768px) {
+
+  }
 }

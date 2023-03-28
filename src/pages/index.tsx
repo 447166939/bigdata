@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import Script from "next/script";
 import Modal from "@mui/material/Modal";
 import Icon from "@mui/material/Icon";
 import Image from "next/image";
@@ -663,8 +662,7 @@ const index: React.FC<IHomeProps> = (props) => {
                   Chat with our AI powered assistant to get your needed data easier:
                 </div>
                 <div className="home-ask-metric-text">
-                  1.It understand what you needed and only fetch the data you needed. 2.It will draw
-                  the data metric for any specific ask, easily for export usage
+                  {`1.It understand what you needed and only fetch the data you needed.\n 2.It will draw the data metric for any specific ask, easily for export usage`}
                 </div>
               </div>
               <div className="home-ask-metric-computer"></div>

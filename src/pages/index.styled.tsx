@@ -22,6 +22,7 @@ export const Header = styled("div")`
   height: 53px;
   z-index: 100;
   @media (min-width: 375px) {
+  justify-content: space-around;
   }
   @media (min-width: 414px) {
     justify-content: space-around;
@@ -30,6 +31,7 @@ export const Header = styled("div")`
     margin-left: 67px;
     margin-top: 37px;
     margin-right: 41px;
+      justify-content: flex-start;
   }
 `;
 export const CustomInput = styled(InputBase)`
@@ -47,6 +49,9 @@ export const SubscribeButton = styled(Button)`
   background: linear-gradient(#00c6ff, #0078ff);
   color: #fff;
   @media (min-width: 375px) {
+   margin-left: 10px;
+    font-size: 12px;
+    height: 35px;
   }
   @media (min-width: 414px) {
     margin-left: 20px;

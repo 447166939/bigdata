@@ -1408,16 +1408,19 @@ box-shadow: 0 -10px 8px rgba(50, 50, 71, 0.05);
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  flex-direction: row;
   @media (min-width: 375px) {
 
   }
   @media (min-width: 414px) {
-   
+    flex-direction: column;
+    margin: 0px auto 0 auto;
+    width: 400px;
   }
   @media (min-width: 768px) {
     border-radius: 20px;
     margin: 83px 0 0 0;
+    flex-direction: row;
+    width: auto;
   }
 }
 .home-product-title {

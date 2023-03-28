@@ -1247,7 +1247,7 @@ width: 0;
   display: flex;
   align-items: center;
   @media (min-width: 375px) {
-    width: 400px;
+    width: 360px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -1321,7 +1321,7 @@ width: 0;
   background-color: rgba(244, 246, 246, 0.7);
   display: flex;
   @media (min-width: 375px) {
-    width: 400px;
+    width: 360px;
     border-radius: 4px;
     margin: 15px auto 0 auto;
     padding-top: 10px;
@@ -1392,8 +1392,8 @@ width: 0;
   white-space: pre-wrap;
   @media (min-width: 375px) {
     font-size: 16px;
-    width: 330px;
-    height: 420px;
+    width: 300px;
+    height: 430px;
   }
   @media (min-width: 414px) {
    font-size: 16px;
@@ -1450,15 +1450,17 @@ width: 0;
 }
 .home-chart-img {
   @media (min-width: 375px) {
-    width: 350px;
-    margin-top: -43px;
+    width: 310px;
+    height: 120px;
+    margin-top: -7px;
   }
   @media (min-width: 414px) {
     width: 350px;
-    margin-top: -43px;
+    height: 130px;
+    margin-top: 0px;
   }
   @media (min-width: 768px) {
-    width: 1000px;
+    width: 1001px;
   height: 257px;
   margin-top: 23px;
   }

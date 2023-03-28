@@ -709,8 +709,6 @@ const index: React.FC<IHomeProps> = (props) => {
                 onAnimationComplete={svgComplete}
                 variants={svgVariants}
                 animate={svgVisible ? "visible" : "hidden"}
-                width="1001"
-                height="257"
                 viewBox="0 0 1001 257"
                 fill="none"
                 className={"home-chart-img"}>

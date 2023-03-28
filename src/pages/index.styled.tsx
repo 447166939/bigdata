@@ -46,32 +46,29 @@ export const EmailInput = styled(InputBase)`
 export const SubscribeButton = styled(Button)`
   background: linear-gradient(#00c6ff, #0078ff);
   color: #fff;
-   @media (min-width: 375px) {
-
+  @media (min-width: 375px) {
   }
   @media (min-width: 414px) {
-   margin-left:20px;
-   font-size:12px;
-   height:35px;
+    margin-left: 20px;
+    font-size: 12px;
+    height: 35px;
   }
   @media (min-width: 768px) {
-     width: 153px;
-  height: 44px;
-  margin-left:0;
-  font-size: inherit;
+    width: 153px;
+    height: 44px;
+    margin-left: 0;
+    font-size: inherit;
   }
 `;
 export const OkButton = styled(Button)`
   color: #fff;
   @media (min-width: 375px) {
-
   }
   @media (min-width: 414px) {
-  
   }
   @media (min-width: 768px) {
     width: 153px;
-  height: 44px;
+    height: 44px;
   }
 `;
 export const MyButton = styled<any>(Button)`

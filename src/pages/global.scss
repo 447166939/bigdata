@@ -665,10 +665,8 @@ width: 0;
   }
 }
 .home-side-container {
-  padding: 38px 43px 0 44px;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(20px);
-  width: 280px;
   height: 100%;
   position: absolute;
   top: 0;
@@ -680,10 +678,12 @@ width: 0;
 
   }
   @media (min-width: 414px) {
-   
+    padding: 38px 43px 0 44px;
+   width: 80%;
   }
   @media (min-width: 768px) {
-    
+    padding: 38px 43px 0 44px;
+    width: 280px;
   }
 }
 .home-side-container-hide {

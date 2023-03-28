@@ -537,74 +537,69 @@ box-shadow: 0 -10px 8px rgba(50, 50, 71, 0.05);
   }
 }
 .home-modal-container {
-  width: 840px;
-  height: 626px;
   background: #fff;
-  border-radius: 8px;
   position: relative;
   @media (min-width: 375px) {
 
   }
   @media (min-width: 414px) {
-   
+   width: 400px;
+    padding-bottom: 20px;
   }
   @media (min-width: 768px) {
-    
+    width: 840px;
+    height: 626px;
+    border-radius: 8px;
+    padding-bottom: 0;
   }
 }
 .home-modal-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 159px;
   @media (min-width: 375px) {
 
   }
   @media (min-width: 414px) {
-   
+   margin-top: 40px;
   }
   @media (min-width: 768px) {
-    
+    margin-top: 159px;
   }
 }
 .home-modal-header-icon {
-  width: 62px;
   height: auto;
   @media (min-width: 375px) {
 
   }
   @media (min-width: 414px) {
-   
+   width: 30px;
   }
   @media (min-width: 768px) {
-    
+    width: 62px;
   }
 }
 .home-modal-header-title {
   font-weight: 700;
-  font-size: 40px;
   color: #383e49;
-  margin-left: 10px;
   @media (min-width: 375px) {
 
   }
   @media (min-width: 414px) {
-   
+   font-size: 20px;
   }
   @media (min-width: 768px) {
-    
+    font-size: 40px;
+    margin-left: 10px;
   }
 }
 .home-modal-content {
-  margin-top: 29px;
   font-weight: 400;
-  font-size: 24px;
   color: #5d6679;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 583px;
   margin-left: auto;
   margin-right: auto;
   white-space: pre-wrap;
@@ -612,10 +607,12 @@ box-shadow: 0 -10px 8px rgba(50, 50, 71, 0.05);
 
   }
   @media (min-width: 414px) {
-   
+   font-size: 12px;
   }
   @media (min-width: 768px) {
-    
+    margin-top: 29px;
+    font-size: 24px;
+    width: 583px;
   }
 }
 .launch-iframe{
@@ -630,39 +627,41 @@ width: 0;
   visibility: hidden;
 }
 .launchlist-form {
-  margin-top: 93px;
   margin-left: auto;
   margin-right: auto;
-  width: 572px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   @media (min-width: 375px) {
 
   }
   @media (min-width: 414px) {
-   
+   justify-content: center;
   }
   @media (min-width: 768px) {
-    
+    margin-top: 93px;
+    width: 572px;
+    justify-content: space-between;
   }
 }
 .home-form-input{
-  width: 390px;
-  height: 44px;
   border: 1px solid #D0D5DD!important;
   outline: none;
-  padding: 10px 14px 10px 14px;
-  border-radius: 8px;
-  font-size: 16px;
   @media (min-width: 375px) {
 
   }
   @media (min-width: 414px) {
-   
+    width: 250px;
+    height: 35px;
+    padding: 10px 14px 10px 14px;
+    border-radius: 8px;
+    font-size: 12px;
   }
   @media (min-width: 768px) {
-    
+    width: 390px;
+    height: 44px;
+    padding: 10px 14px 10px 14px;
+    border-radius: 8px;
+    font-size: 16px;
   }
 }
 .home-side-container {
@@ -1636,14 +1635,15 @@ width: 0;
   }
 }
 .home-ok-button {
-  height: auto;
   @media (min-width: 375px) {
 
   }
   @media (min-width: 414px) {
-   
+    height: 50px;
+    width: auto;
   }
   @media (min-width: 768px) {
     width: 153px;
+    height: auto;
   }
 }

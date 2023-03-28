@@ -3,14 +3,7 @@ import React, { useEffect, useState } from "react";
 export const useTyper = () => {
   const text1 =
     'Can you give me the BSR keyword under category "computer monitor" at Amazon? I need Top5 BSR keyword for past 6 months\' data, draw me a graph of "Line Charts", y-axis=Monthly Sales, x-axis=time';
-  const text2 =
-    'TOP-5 BSR keyword under category "computer monitor" at Amazon is:\n' +
-    "1.computer monitor\n" +
-    "2.computer screen\n" +
-    "3.computer display\n" +
-    "4.monitor\n" +
-    "5.screen\n" +
-    'With a monthly GMV of $38.47M and $299.95 on average price. Top sellers are Samsung, Acer, ASUS, KOORUI and dell. Growth in this market is slow with about 0.5% up in GMV month to month. Trending here is bigger and thinner screen, wide-bend screen has a month GMV growth of 6.2%. I\'m able to find 289 keywords and misspelling-keywords and here are the Top5 keywords with its "Monthly Sales" and time manner data in Line Charter:';
+  const text2 =`TOP-5 BSR keyword under category "computer monitor" at Amazon is:\n1.computer monitor\n2.computer screen\n3.computer display\n4.monitor\n5.screen\nWith a monthly GMV of $38.47M and $299.95 on average price. Top sellers are Samsung, Acer, ASUS, KOORUI and dell. Growth in this market is slow with about 0.5% up in GMV month to month. Trending here is bigger and thinner screen, wide-bend screen has a month GMV growth of 6.2%. I\'m able to find 289 keywords and misspelling-keywords and here are the Top5 keywords with its "Monthly Sales" and time manner data in Line Charter:`
   const [state, setState] = useState({ typedText1: "", typedText2: "", mode: "person" });
   let text1len = text1.length;
   let text2len = text2.length;

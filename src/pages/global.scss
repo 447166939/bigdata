@@ -1504,23 +1504,25 @@ width: 0;
 .home-product-box {
   /**background-color: rgba(244, 246, 246, 1);**/
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
   @media (min-width: 375px) {
     flex-direction: column;
     margin: 0px auto 0 auto;
-    width: 400px;
+    width: 360px;
+    align-items: center;
   }
   @media (min-width: 414px) {
     flex-direction: column;
     margin: 0px auto 0 auto;
     width: 400px;
+    align-items: center;
   }
   @media (min-width: 768px) {
     border-radius: 20px;
     margin: 83px 0 0 0;
     flex-direction: row;
     width: auto;
+    align-items: center;
+    justify-content: flex-end;
   }
 }
 .home-product-title {
@@ -1552,18 +1554,21 @@ width: 0;
 .home-product-left{
   @media (min-width: 375px) {
     order: 2;
+    width: 360px;
   }
   @media (min-width: 414px) {
    order: 2;
+    width: 400px;
   }
   @media (min-width: 768px) {
    order: 1;
+    width: auto;
   }
 }
 .home-product-pic {
   height: auto;
   @media (min-width: 375px) {
-    width: 400px;
+    width: 360px;
     margin-left: auto;
     margin-right: auto;
     order: 1;
@@ -1587,7 +1592,7 @@ width: 0;
   justify-content: center;
   align-items: center;
   @media (min-width: 375px) {
-    width: 400px;
+    width: 360px;
     flex-direction: column;
     margin: 0px auto 0 auto;
   }
@@ -1606,7 +1611,7 @@ width: 0;
 .home-metric-pic {
   height: auto;
   @media (min-width: 375px) {
-    width: 400px;
+    width: 360px;
   }
   @media (min-width: 414px) {
    width: 400px;
@@ -1617,7 +1622,7 @@ width: 0;
 }
 .home-metric-right {
   @media (min-width: 375px) {
-    width: 390px;
+    width: 360px;
   }
   @media (min-width: 414px) {
    width: 390px;
@@ -1674,7 +1679,7 @@ width: 0;
 .home-monitor-pic {
   height: auto;
   @media (min-width: 375px) {
-    width: 400px;
+    width: 360px;
   }
   @media (min-width: 414px) {
    width: 400px;
@@ -1685,7 +1690,7 @@ width: 0;
 }
 .home-monitor-left {
   @media (min-width: 375px) {
-    width: 400px;
+    width: 360px;
   }
   @media (min-width: 414px) {
    width: 400px;

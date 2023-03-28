@@ -1558,11 +1558,12 @@ box-shadow: 0 -10px 8px rgba(50, 50, 71, 0.05);
 
   }
   @media (min-width: 414px) {
-   
+   flex-direction: column;
   }
   @media (min-width: 768px) {
     border-radius: 20px;
     margin: 72px auto 67px auto;
+    flex-direction: row;
   }
 }
 .home-monitor-pic {
@@ -1571,7 +1572,7 @@ box-shadow: 0 -10px 8px rgba(50, 50, 71, 0.05);
 
   }
   @media (min-width: 414px) {
-   
+   width: 400px;
   }
   @media (min-width: 768px) {
     width: 671px;
@@ -1582,7 +1583,7 @@ box-shadow: 0 -10px 8px rgba(50, 50, 71, 0.05);
 
   }
   @media (min-width: 414px) {
-   
+   width: 400px;
   }
   @media (min-width: 768px) {
     width: 451px;

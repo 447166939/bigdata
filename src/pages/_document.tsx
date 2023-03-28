@@ -12,6 +12,7 @@ import theme, { roboto } from "@/theme/index";
 import createEmotionCache from "@/utils/createEmotionCache";
 import { MyAppProps } from "./_app";
 import { AppType } from "next/app";
+import Script from "next/script";
 interface MyDocumentProps extends DocumentProps {
   emotionStyleTags: JSX.Element[];
 }
@@ -34,6 +35,7 @@ export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
       <body>
         <Main />
         <NextScript />
+        <Script src="https://getlaunchlist.com/js/widget-diy.js" strategy={'beforeInteractive'}></Script>
       </body>
     </Html>
   );

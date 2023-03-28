@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import Script from 'next/script'
+import Script from "next/script";
 import Modal from "@mui/material/Modal";
 import Icon from "@mui/material/Icon";
 import Image from "next/image";
@@ -1035,16 +1035,16 @@ const index: React.FC<IHomeProps> = (props) => {
             className={
               "home-modal-content"
             }>{`We are not officially launched yet,\nplease join our waitlist`}</div>
-          <iframe  className={'launch-iframe'}  id={"form"} name={"form"}></iframe>
+          <iframe className={"launch-iframe"} id={"form"} name={"form"}></iframe>
           <form
             onSubmit={submit}
             action="https://getlaunchlist.com/s/IGBWwV"
             method="POST"
             target={"form"}
             className={"launchlist-form"}>
-            <input className={'launch-name'} value={'askmetric'} name="name" type="text" />
+            <input className={"launch-name"} value={"askmetric"} name="name" type="text" />
             <input
-                type={'email'}
+              type={"email"}
               className={"home-form-input"}
               name={"email"}
               onChange={emailChange}

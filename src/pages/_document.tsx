@@ -35,7 +35,9 @@ export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
       <body>
         <Main />
         <NextScript />
-        <Script src="https://getlaunchlist.com/js/widget-diy.js" strategy={'beforeInteractive'}></Script>
+        <Script
+          src="https://getlaunchlist.com/js/widget-diy.js"
+          strategy={"beforeInteractive"}></Script>
       </body>
     </Html>
   );

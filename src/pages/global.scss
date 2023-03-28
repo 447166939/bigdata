@@ -876,11 +876,13 @@ width: 0;
     width: 31px;
     height: 31px;
     background-size: 250% auto;
+    margin-left: 10px;
   }
   @media (min-width: 768px) {
     width: 31px;
   height: 31px;
   background-size: 250% auto;
+    margin-left: 0;
   }
 }
 .home-footer-top-row {
@@ -891,10 +893,12 @@ width: 0;
   }
   @media (min-width: 414px) {
   flex-wrap: wrap;
+    margin-top: 10px;
   }
   @media (min-width: 768px) {
     margin-left: 351px;
     flex-wrap: nowrap;
+    margin-top: 0;
   }
 }
 .home-footer-bottom-row {
@@ -974,17 +978,17 @@ width: 0;
 }
 .home-footer-text5 {
   font-weight: 400;
-  font-size: 18px;
   color: #fff;
-  margin-left: 31px;
   @media (min-width: 375px) {
 
   }
   @media (min-width: 414px) {
-   
+    margin-left: 12px;
+    font-size: 12px;
   }
   @media (min-width: 768px) {
-    
+    font-size: 18px;
+    margin-left: 31px;
   }
 }
 .home-footer-phone-text {
